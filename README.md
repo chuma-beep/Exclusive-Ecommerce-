@@ -11,4 +11,28 @@
   * Member 3 - MJ
   * Member 4 - Femi 
 - In the figma file Each member has a section delegated to them according to their numbers.
- 
+
+### Update: Member 1 (Stanley Azi)
+
+Kicked off the project with vite ⚡️.
+React. You can use Tailwindcss, CSS or any library of your choice for styling.
+started working on landing page.
+
+- header
+- hero section
+- footer
+
+#### Steps to start working on this project
+
+- fork the repo
+- clone the forked repo on your github
+- run `git checkout -b <branch name>` to create your own branch, replace the `<branch name>` with your branch name choice or run `git checkout <branch name>` or `git switch <branch name>` to switch to your branch if you all created the branch
+- run `git branch` to confirm the branch you are on
+- `cd` into the cloned repo and run `pnpm install` to install all dependencies on your machine
+- run `pnpm run dev` to create a port with vite and load the page on your browser ⚡️
+- each member can create a component for their tasks and also check to see what component already exists so they can import in their component rather than starting a new one
+- remember to update this Readme with what you worked on
+- after you are done, stage all changes in your branch and push to github.
+- make a pull request for your changes to be merged
+
+Let's go 🚀
