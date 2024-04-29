@@ -6,9 +6,9 @@
 ### The Tasks are divided as follows:
 - Each section in the figma template has been titled form member 1 - member 4
 - Member Positions are as follows:
-    Member 1 - Stanley
-    Member 2 - Wisdom
-    Member 3 - MJ
-    Member 4 - Femi 
+  * Member 1 - Stanley
+  * Member 2 - Wisdom
+  * Member 3 - MJ
+  * Member 4 - Femi 
 - In the figma file Each member has a section delegated to them according to their numbers.
 - 
