@@ -11,4 +11,3 @@
   * Member 3 - MJ
   * Member 4 - Femi 
 - In the figma file Each member has a section delegated to them according to their numbers.
-- 
