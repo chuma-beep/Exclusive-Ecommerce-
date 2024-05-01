@@ -23,7 +23,7 @@ export default {
       },
       outlineColor: {
         "active": "#DB4444",
-      }
+      },      
     },
   },
   plugins: [],

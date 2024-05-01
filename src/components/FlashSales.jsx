@@ -30,10 +30,10 @@ export default function FlashSales() {
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <button className="bg-secondary w-8 h-8 rounded-full hover:bg-action flex items-center justify-center">
+          <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-secondary flex items-center justify-center">
             <HiArrowLeft />
           </button>
-          <button className="bg-secondary w-8 h-8 rounded-full hover:bg-action flex items-center justify-center">
+          <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-secondary flex items-center justify-center">
             <HiArrowRight />
           </button>
         </div>

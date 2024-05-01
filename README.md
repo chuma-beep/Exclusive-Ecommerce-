@@ -21,6 +21,8 @@ started working on landing page.
 - header
 - hero section
 - flash sales section
+- categories section
+- best selling section
 - footer
 
 #### Steps to start working on this project
@@ -34,6 +36,7 @@ started working on landing page.
 - each member can create a component for their tasks and also check to see what component already exists so they can import in their component rather than starting a new one
 - remember to update this Readme with what you worked on
 - after you are done, stage all changes in your branch and push to github.
+- if there were conflicts when trying to push due to updates on the remote branch from other contributors, run `git pull --rebase origin main` to update your local codebase and then push your changes.
 - make a pull request for your changes to be merged
 
 Let's go 🚀
