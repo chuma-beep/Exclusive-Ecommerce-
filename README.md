@@ -20,6 +20,7 @@ started working on landing page.
 
 - header
 - hero section
+- flash sales section
 - footer
 
 #### Steps to start working on this project

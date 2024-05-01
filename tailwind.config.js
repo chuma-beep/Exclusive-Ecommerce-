@@ -7,13 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "white",
+        primary: "black",
+        secondary: "white",
         action: "#DB4444"
       },
       backgroundColor: {
         primary: "white",
         secondary: "#F5F5F5",
         "action-btn": "#DB4444",
+        accent: "#DB4444"
       },
       borderColor: {
         "active": "#DB4444",
