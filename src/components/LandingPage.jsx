@@ -5,6 +5,8 @@ import heroCarouselData from "../data/heroCarouselData.json";
 import Footer from "./Footer";
 import { MdNavigateNext } from "react-icons/md";
 import FlashSales from "./FlashSales";
+import Categories from "./Categories";
+import BestSellingProducts from "./BestSellingProducts";
 
 export default function LandingPage() {
   return (
@@ -29,6 +31,8 @@ export default function LandingPage() {
         <HeroCarousel data={heroCarouselData} />
       </section>
       <FlashSales />
+      <Categories />
+      <BestSellingProducts />
       <Footer />
     </>
   );

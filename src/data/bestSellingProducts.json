@@ -1,0 +1,53 @@
+{
+    "bestSellingProducts": [
+      {
+        "name": "The north coat",
+        "price": 364,
+        "discount-price": 245,
+        "img": "/best-selling-img/coat.svg",
+        "alt": "game pad",
+        "stars": 88
+      },
+      {
+        "name": "Gucci duffle bag",
+        "price": 1160,
+        "discount-price": 960,
+        "img": "/best-selling-img/duffle-bag.svg",
+        "alt": "keyboard",
+        "stars": 75
+      },
+      {
+        "name": "IPS LCD Gaming Monitor",
+        "price": 400,
+        "discount-price": 370,
+        "img": "/flash-sales-img/monitor.png",
+        "alt": "monitor",
+        "stars": 99
+      },
+      {
+        "name": "RGB liquid CPU Cooler",
+        "price": 400,
+        "discount-price": 375,
+        "img": "/best-selling-img/cpu-cooler.svg",
+        "alt": "chair",
+        "stars": 99
+      },
+      {
+        "name": "Small BookSelf",
+        "price": 660,
+        "discount-price": 470,
+        "img": "/best-selling-img/bookshelf.svg",
+        "alt": "jacket",
+        "stars": 55
+      },
+      {
+        "name": "ASUS FHD Gaming Laptop",
+        "price": 700,
+        "discount-price": 570,
+        "img": "/flash-sales-img/laptop.png",
+        "alt": "laptop",
+        "stars": 325
+      }
+    ]
+  }
+  
