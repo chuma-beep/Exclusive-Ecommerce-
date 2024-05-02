@@ -9,13 +9,15 @@ export default {
       colors: {
         primary: "black",
         secondary: "white",
-        action: "#DB4444"
+        action: "#DB4444",
+        "green-cus": "#00FF66"
       },
       backgroundColor: {
         primary: "white",
         secondary: "#F5F5F5",
         "action-btn": "#DB4444",
-        accent: "#DB4444"
+        accent: "#DB4444",
+        "green-cus": "#00FF66"
       },
       borderColor: {
         "active": "#DB4444",

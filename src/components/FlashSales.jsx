@@ -38,10 +38,10 @@ export default function FlashSales() {
           </button>
         </div>
       </div>
-      <div className="flex w-full gap-6 overflow-x-hidden">
+      <div className="flex w-full flex-wrap justify-center gap-6 overflow-x-hidden">
         {flashSalesProducts.map((product, index) => {
           return (
-            <div className="flex flex-col gap-1 w-[20rem]" key={index}>
+            <div className="flex flex-col gap-1 w-[14.3rem]" key={index}>
               <div className="flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
                 <img className="" src={product.img} alt={product.alt} />
                 <span className="absolute w-max h-max px-2 rounded-md bg-accent left-3 top-2 text-sm text-secondary">
@@ -71,7 +71,7 @@ export default function FlashSales() {
       </div>
       <div className="flex mt-8 items-center justify-center w-full">
         <Link
-          className="px-4 py-2 rounded-md bg-action w-max text-secondary"
+          className="px-4 py-2 rounded-md bg-action w-max text-secondary hover:translate-x-2 hover:-translate-y-1 transition-all"
           to="/"
         >
           View All Products
