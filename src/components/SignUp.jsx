@@ -3,7 +3,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import "../index.css";
-
+import { Link } from "react-router-dom"
 
 export default function SignUp() {
   return (
@@ -37,7 +37,7 @@ export default function SignUp() {
 </div>
 <div className="flex flex-row gap-4 justify-center">
 <p className="opacity-70 mb-10  text-black text-base font-normal leading-normal">Already have account?</p>
-<a className="opacity-70 text-black text-base font-medium leading-normal underline underline-offset-8">Log in</a>
+<Link className="opacity-70 text-black text-base font-medium leading-normal underline underline-offset-8" to="/Login" >Log in</Link>
 
       </div>
       </form>
