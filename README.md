@@ -23,6 +23,14 @@ started working on landing page.
 - flash sales section
 - footer
 
+### Update: Member 2 (Wisdom)
+
+- Signup 
+- Login
+- Cart
+- WishList
+
+
 #### Steps to start working on this project
 
 - fork the repo
