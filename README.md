@@ -37,7 +37,8 @@ started working on landing page.
 - About Section
 - Account Section
 - Checkout Section
-
+- I Linked the cart section to the checkout section
+- I made all my components responsive(kinda responsive)
 #### Steps to start working on this project
 
 - fork the repo
