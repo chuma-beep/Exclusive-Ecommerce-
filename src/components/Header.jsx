@@ -22,10 +22,10 @@ export default function Header() {
             <HiOutlineSearch className="absolute right-2" />
           </div>
           <div className="flex gap-8 items-center">
-            <Link className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl hover:bg-secondary" to="/wishlist">
+            <Link className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl hover:bg-secondary" to="/Wishlist">
               <HiOutlineHeart className="w-full h-full p-1"/>
             </Link>
-            <Link className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl hover:bg-secondary" to="/cart">
+            <Link className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl hover:bg-secondary" to="/Cart">
               <HiOutlineShoppingCart className="w-full h-full p-1" />
             </Link>
           </div>
