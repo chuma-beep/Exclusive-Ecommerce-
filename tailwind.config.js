@@ -8,7 +8,8 @@ export default {
     extend: {
       colors: {
         primary: "white",
-        action: "#DB4444"
+        action: "#DB4444",
+        customRed: '#DB4444',
       },
       backgroundColor: {
         primary: "white",
@@ -22,6 +23,7 @@ export default {
       outlineColor: {
         "active": "#DB4444",
       }
+      
     },
   },
   plugins: [],

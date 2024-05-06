@@ -4,7 +4,6 @@ import {
   HiOutlineHeart,
   HiOutlineShoppingCart,
 } from "react-icons/hi";
-
 export default function Header() {
   return (
     <header className="flex w-full h-[6rem] px-28 gap-[7rem] items-center border-b-2 border-b-secondary">
@@ -15,6 +14,7 @@ export default function Header() {
           <NavLink className="px-2 py-1 hover:underline font-medium" to="/contact">Contact</NavLink>
           <NavLink className="px-2 py-1 hover:underline font-medium" to="/about">About</NavLink>
           <NavLink className="px-2 py-1 hover:underline font-medium" to="/signup">Sign Up</NavLink>
+         
         </nav>
         <div className="flex items-center justify-center gap-8">
           <div className="flex items-center relative">

@@ -14,3 +14,121 @@
     @apply w-full h-full;
   }
 }
+
+/* MJ's FORM Styles */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-right: 1rem;
+}
+
+label {
+  margin-right: 0.5rem;
+}
+
+input[type='text']
+
+ {
+  width: 330px;
+  height: 50px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.my-email-input,
+.my-number-input{
+  width: 330px;
+  height: 50px;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+input[type='password']{
+  width: 710px;
+  height: 50px;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  margin-top: 10px;
+  border-radius: 4px;
+  padding: 0.5rem;
+  
+}
+
+.cancel-btn,
+.save-btn{
+  width: 214px;
+  height: 56px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px;
+ 
+  
+ 
+}
+.save-btn{
+  background-color: #DB4444;
+  color: #fff;
+  border-radius: 5px;
+  
+}
+
+.cancel-btn{
+  border: 0;
+}
+
+
+
+
+
+
+
+/* form media queries */
+
+
+@media screen and (min-width:250px) and (max-width:480px) {
+  .form-row{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+ .form-group{
+    margin-right: 0;
+  }
+input[type='password']{
+  width: 330px;
+}
+.form-container {
+  max-width: 330px;
+  height: auto;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+.billing{
+  display: grid;
+}
+
+.upper-links{
+  font-size: 10px !important;
+}
+}
+
+@media screen and (min-width:481px) and (max-width:768px) {
+  .form-row{
+    grid-template-columns: repeat(3,1fr);
+  }
+}

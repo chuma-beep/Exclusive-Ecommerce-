@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/poppins": "^5.0.14",
+    "@mui/icons-material": "^5.15.16",
+    "@mui/material": "^5.15.15",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.9.0",
     "prop-types": "^15.8.1",
