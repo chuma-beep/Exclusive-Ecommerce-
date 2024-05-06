@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Categories() {
   return (
-    <section className="w-full px-28 my-14">
+    <section className="w-full px-28 my-20">
       <div className="flex items-center gap-3 mb-4">
         <span className="block w-[1.3rem] h-[3rem] rounded-md bg-accent"></span>
         <h5 className="text-base text-action font-bold">Categories</h5>
@@ -23,7 +23,7 @@ export default function Categories() {
       <div className="flex w-full flex-wrap justify-center gap-6 overflow-x-hidden border-b-[3px] border-secondary pb-16">
         {categories.map((category, index) => {
           return (
-            <Link className="flex flex-col gap-1 w-[14.3rem] h-[10rem] border-[3px] border-secondary rounded-lg p-4 items-center justify-center hover:bg-action transition-all hover:text-secondary" id="category-p" to="/" key={index}>
+            <Link className="flex flex-col gap-1 w-[14rem] h-[10rem] border-[3px] border-secondary rounded-lg p-4 items-center justify-center hover:bg-action transition-all hover:text-secondary" id="category-p" to="/" key={index}>
                 <img className="category-icon" src={category.icon} alt={category.alt} />
                 <h3>{category.title}</h3>
             </Link>
