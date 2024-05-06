@@ -1,0 +1,95 @@
+{
+    "exploreOurProducts": [
+      {
+        "name": "Breed Dry Dog Food",
+        "price": 100,
+        "new": "new",
+        "img": "/explore-products-img/dog-food.svg",
+        "alt": "dog food",
+        "stars": 34
+      },
+      {
+        "name": "GP11 Shooter USB Gamepad",
+        "price": 660,
+        "new": "new",
+        "img": "/explore-products-img/game-pad-b.svg",
+        "alt": "game pad",
+        "stars": 88
+      },
+      {
+        "name": "CANON EOS DSLR Camera",
+        "price": 1160,
+        "img": "/explore-products-img/camera.svg",
+        "alt": "keyboard",
+        "stars": 75
+      },
+      {
+        "name": "Curology Product Set ",
+        "price": 554,
+        "new": "new",
+        "img": "/explore-products-img/product-set.svg",
+        "alt": "keyboard",
+        "stars": 75
+      },
+      {
+        "name": "IPS LCD Gaming Monitor",
+        "price": 400,
+        "img": "/flash-sales-img/monitor.png",
+        "alt": "monitor",
+        "stars": 99
+      },
+      {
+        "name": "S-Series Comfort Chair",
+        "price": 400,
+        "img": "/flash-sales-img/chair.png",
+        "alt": "chair",
+        "stars": 99
+      },
+      {
+        "name": "Kids Electric Car",
+        "price": 940,
+        "img": "/explore-products-img/car.svg",
+        "alt": "chair",
+        "stars": 99
+      },
+      {
+        "name": "Quilted Satin Jacket",
+        "price": 660,
+        "img": "/flash-sales-img/jacket.png",
+        "alt": "jacket",
+        "stars": 55
+      },
+      {
+        "name": "Jr. Zoom Soccer Cleats",
+        "price": 500,
+        "new": "new",
+        "img": "/explore-products-img/football-boots.svg",
+        "alt": "game pad",
+        "stars": 88
+      },
+      {
+        "name": "HAVIT HV-G92 Gamepad",
+        "price": 160,
+        "new": "new",
+        "img": "/flash-sales-img/game-pad.png",
+        "alt": "game pad",
+        "stars": 88
+      },
+      {
+        "name": "AK-900 Wired Keyboard",
+        "price": 1160,
+        "new": "new",
+        "img": "/flash-sales-img/keyboard.png",
+        "alt": "keyboard",
+        "stars": 75
+      },
+      {
+        "name": "ASUS FHD Gaming Laptop",
+        "price": 700,
+        "img": "/flash-sales-img/laptop.png",
+        "alt": "laptop",
+        "stars": 325
+      }
+    ]
+  }
+  

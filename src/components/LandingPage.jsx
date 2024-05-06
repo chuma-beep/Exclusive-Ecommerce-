@@ -5,6 +5,9 @@ import heroCarouselData from "../data/heroCarouselData.json";
 import Footer from "./Footer";
 import { MdNavigateNext } from "react-icons/md";
 import FlashSales from "./FlashSales";
+import Categories from "./Categories";
+import BestSellingProducts from "./BestSellingProducts";
+import ExploreOurProducts from "./ExploreOurProducts";
 
 export default function LandingPage() {
   return (
@@ -12,23 +15,97 @@ export default function LandingPage() {
       <Header />
       <section className="flex px-28 mb-6 gap-[7rem] w-full justify-between">
         <nav className="flex flex-col gap-3 text-sm w-[11rem] pr-2 pt-10 border-r-[1px] border-secondary h-max">
-          <NavLink className="flex items-center pr-2 justify-between transition-all hover:text-action hover:underline" to="/women-fashion">
+          <NavLink
+            className="flex items-center pr-2 justify-between transition-all hover:text-action hover:underline"
+            to="/women-fashion"
+          >
             Woman&#39;s Fashion <MdNavigateNext />
           </NavLink>
-          <NavLink className="flex items-center pr-2 justify-between transition-all hover:text-action hover:underline" to="/men-fashion">
+          <NavLink
+            className="flex items-center pr-2 justify-between transition-all hover:text-action hover:underline"
+            to="/men-fashion"
+          >
             Men&#39;s Fashion <MdNavigateNext />
           </NavLink>
-          <NavLink className="transition-all hover:text-action hover:underline" to="/electronics">Electronics</NavLink>
-          <NavLink className="transition-all hover:text-action hover:underline" to="/home&lifestyle">Home & Lifestyle</NavLink>
-          <NavLink className="transition-all hover:text-action hover:underline" to="medicine">Medicine</NavLink>
-          <NavLink className="transition-all hover:text-action hover:underline" to="sports&outdoors">Sports & Outdoor</NavLink>
-          <NavLink className="transition-all hover:text-action hover:underline" to="/babys&toys">Baby&#39;s & Toys</NavLink>
-          <NavLink className="transition-all hover:text-action hover:underline" to="/groceries&pets">Groceries & Pets</NavLink>
-          <NavLink className="transition-all hover:text-action hover:underline" to="health&beauty">Health & Beauty</NavLink>
+          <NavLink
+            className="transition-all hover:text-action hover:underline"
+            to="/electronics"
+          >
+            Electronics
+          </NavLink>
+          <NavLink
+            className="transition-all hover:text-action hover:underline"
+            to="/home&lifestyle"
+          >
+            Home & Lifestyle
+          </NavLink>
+          <NavLink
+            className="transition-all hover:text-action hover:underline"
+            to="medicine"
+          >
+            Medicine
+          </NavLink>
+          <NavLink
+            className="transition-all hover:text-action hover:underline"
+            to="sports&outdoors"
+          >
+            Sports & Outdoor
+          </NavLink>
+          <NavLink
+            className="transition-all hover:text-action hover:underline"
+            to="/babys&toys"
+          >
+            Baby&#39;s & Toys
+          </NavLink>
+          <NavLink
+            className="transition-all hover:text-action hover:underline"
+            to="/groceries&pets"
+          >
+            Groceries & Pets
+          </NavLink>
+          <NavLink
+            className="transition-all hover:text-action hover:underline"
+            to="health&beauty"
+          >
+            Health & Beauty
+          </NavLink>
         </nav>
         <HeroCarousel data={heroCarouselData} />
       </section>
       <FlashSales />
+      <Categories />
+      <BestSellingProducts />
+      <section className="block w-full px-28 my-8">
+        <div className="flex gap-[7rem] w-full justify-between bg-black text-secondary p-8 items-start">
+          <div className="w-1/2 max-md:w-full flex flex-col gap-8">
+            <h2 className="text-[1.2rem] text-green-cus">Categories</h2>
+            <h3 className="text-[3rem] font-bold">Enhance Your Music Experience</h3>
+            <div className="flex gap-6">
+              <div className="flex flex-col gap-0 text-[0.6rem] font-bold p-1 text-primary rounded-full bg-secondary w-[3.7rem] h-[3.7rem] items-center justify-center">
+                <span>23</span>
+                <span>Hours</span>
+              </div>
+              <div className="flex flex-col gap-0 text-[0.6rem] font-bold p-1 text-primary rounded-full bg-secondary w-[3.7rem] h-[3.7rem] items-center justify-center">
+                <span>05</span>
+                <span>Days</span>
+              </div>
+              <div className="flex flex-col gap-0 text-[0.6rem] font-bold p-1 text-primary rounded-full bg-secondary w-[3.7rem] h-[3.7rem] items-center justify-center">
+                <span>49</span>
+                <span>Minutes</span>
+              </div>
+              <div className="flex flex-col gap-0 text-[0.6rem] font-bold p-1 text-primary rounded-full bg-secondary w-[3.7rem] h-[3.7rem] items-center justify-center">
+                <span>44</span>
+                <span>Seconds</span>
+              </div>
+            </div>
+            <button className="w-[10rem] rounded-lg font-bold text-lg p-3 hover:translate-x-2 hover:-translate-y-1 transition-all bg-green-cus">Buy Now!</button>
+          </div>
+          <div className="w-1/2 max-md:w-full">
+            <img className="w-full h-full" src="/buy-now-img/music-box.png" alt="music box" />
+          </div>
+        </div>
+      </section>
+      <ExploreOurProducts />
       <Footer />
     </>
   );
