@@ -37,6 +37,7 @@ started working on landing page.
 - About Section
 - Account Section
 - Checkout Section
+
 #### Steps to start working on this project
 
 - fork the repo
