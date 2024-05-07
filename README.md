@@ -23,6 +23,9 @@ started working on landing page.
 - flash sales section
 - categories section
 - best selling section
+- explore products section
+- new arrivals section
+- services section
 - footer
 
 ### Update: Member 2 (Wisdom)

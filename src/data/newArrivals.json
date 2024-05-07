@@ -1,0 +1,32 @@
+{
+  "newArrivals": [
+    {
+      "product": "PlayStation 5",
+      "src": "/new-arrival-img/ps5.svg",
+      "alt": "PlayStation 5",
+      "description": "Black and White version of the PS5 coming out on sale.",
+      "shop link": "/"
+    },
+    {
+      "product": "Women’s Collections",
+      "src": "/new-arrival-img/women-hat.svg",
+      "alt": "woman wearing hat",
+      "description": "Featured woman collections that give you another vibe.",
+      "shop link": "/"
+    },
+    {
+      "product": "Speakers",
+      "src": "/new-arrival-img/speakers.svg",
+      "alt": "Speakers",
+      "description": "Amazon wireless speakers",
+      "shop link": "/"
+    },
+    {
+      "product": "Perfume",
+      "src": "/new-arrival-img/perfumes.svg",
+      "alt": "Perfume",
+      "description": "GUCCI INTENSE OUD EDP",
+      "shop link": "/"
+    }
+  ]
+}
