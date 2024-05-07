@@ -10,7 +10,7 @@ export default function Wishlist() {
       <Header /> 
      <div className="flex flex-row justify-center items-center mt-20">
 
-     <div className="w-98 h-14 mb-20 justify-start items-center gap-96 flex flex-row justify-between">
+     <div className="w-98 h-14 mb-20 items-center gap-96 flex flex-row justify-between">
   <h2 className="text-center text-black text-xl w-48 inline-flex gap-4">Wishlist <span>(4)</span></h2>
   <div className="px-12 py-4 rounded border border-black border-opacity-50 justify-center items-center gap-2.5 flex">
 
