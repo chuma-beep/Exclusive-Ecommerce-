@@ -36,6 +36,11 @@ started working on landing page.
 - WishList
 
 
+### Update: Member 3 (MJ)
+- About Section
+- Account Section
+- Checkout Section
+
 #### Steps to start working on this project
 
 - fork the repo
