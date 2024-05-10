@@ -42,7 +42,7 @@ started working on landing page.
 - Checkout Section
 - I linked the cart section to the checkout section
 - I made my sections responsive(kinda responsive)
-- Just realized i do not have a branch on this repository, hoping this fixes the issue.
+- Just realized i do not have a branch on this repository.
 
 #### Steps to start working on this project
 

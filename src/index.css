@@ -76,7 +76,7 @@ input[type='password']{
   height: 56px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin: 10px;
+  margin: 30px 10px 30px 10px;
  
   
  
@@ -105,12 +105,25 @@ input[type='password']{
   .form-row{
     grid-template-columns: repeat(1,1fr);
   }
-
+.form-box{
+  display: flex;
+  flex-direction: column;
+ 
+  
+}
  .form-group{
     margin-right: 0;
   }
 input[type='password']{
-  width: 330px;
+  width: 200px;
+}
+input[type = 'text']{
+
+  width: 150px;
+}
+.my-email-input,
+.my-number-input{
+  width: 150px;
 }
 .form-container {
   max-width: 330px;
@@ -122,14 +135,88 @@ input[type='password']{
   display: grid;
 }
 
-.upper-links{
-  font-size: 10px !important;
+.save{
+  width: 150px;
+  font-size: 12px;
+  margin-left: 12px;
+  
 }
+
+.cancel-btn,
+.save-btn{
+width: 120px;
+margin: 0 200px 0 auto;
+}
+
+.checkout-container {
+ display: flex;
+ flex-direction: column;
+ gap: 2px;
+}
+.item{
+ display: flex;
+ width: 150px;
+ font-size: 12px;
+ font-weight: bold;
+  
+ 
+}
+
+.sub{
+  display: flex;
+  width: 150px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.apply-btn{
+  display: block;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
 }
 
 @media screen and (min-width:481px) and (max-width:768px) {
   .form-row{
     grid-template-columns: repeat(3,1fr);
   }
+  input[type='password']{
+    width: 200px;
+  }
+  input[type = 'text']{
+  
+    width: 200px;
+  }
+  .my-email-input,
+  .my-number-input{
+    width: 200px;
+  }
+  .checkout-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+   }
+   .item{
+    display: flex;
+    width: 150px;
+    font-size: 12px;
+    font-weight: bold;
+     
+    
+   }
+   
+   .sub{
+     display: flex;
+     width: 150px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   
+   .apply-btn{
+     display: block;
+     margin-top: 10px;
+     margin-left: 5px;
+   }
 }
 
