@@ -41,7 +41,7 @@ export default function FlashSales() {
       <div className="flex w-full flex-wrap justify-center gap-6 overflow-x-hidden">
         {flashSalesProducts.map((product, index) => {
           return (
-            <div className="flex flex-col gap-1 w-[14.3rem]" key={index}>
+            <div className="flex flex-col gap-1 w-[14rem]" key={index}>
               <div className="flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
                 <img className="" src={product.img} alt={product.alt} />
                 <span className="absolute w-max h-max px-2 rounded-md bg-accent left-3 top-2 text-sm text-secondary">

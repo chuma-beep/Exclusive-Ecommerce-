@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function BestSellingProducts() {
   return (
-    <section className="w-full px-28 my-14">
+    <section className="w-full px-28 my-20">
       <div className="flex items-center gap-3 mb-4">
         <span className="block w-[1.3rem] h-[3rem] rounded-md bg-accent"></span>
         <h5 className="text-base text-action font-bold">This Month</h5>
@@ -23,7 +23,7 @@ export default function BestSellingProducts() {
       <div className="flex w-full flex-wrap justify-center gap-6 overflow-x-hidden">
         {bestSellingProducts.map((product, index) => {
           return (
-            <div className="flex flex-col gap-1 w-[14.3rem]" key={index}>
+            <div className="flex flex-col gap-1 w-[14rem]" key={index}>
               <div className="flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
                 <img className="" src={product.img} alt={product.alt} />
                 <div className="absolute top-2 right-3 flex flex-col gap-4">
