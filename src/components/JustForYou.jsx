@@ -4,21 +4,22 @@ import { IoEyeOutline } from "react-icons/io5";
 
 export default function JustForYou(){
     return(<>
-         <div className="flex flex-row justify-center items-center mt-20 pl-36">
+         <div className="flex flex-row  justify-center items-center mt-20 lg:pl-36">
 
-         <div className="flex w-full gap-4 mb-8 justify- items-center">
-         <div className="w-5 h-10  ml-10 relative">
+         <div className="flex flex-row lg:w-9/12 md:w-9/12 gap-4 mb-8 justify-between flex-wrap">
+         <div className="w-5 h-10  ml-0 relative">
   <span className="w-5 h-10 left-0 top-0 absolute bg-red-500 rounded" />
-  </div>
-        <h2 className="text-2xl font-boldb mr-96"> Just For You</h2>
-<div className="px-12 py-4 rounded border ml-60 border-black border-opacity-50 justify-center items-center gap-2.5 flex">
+  
+        <h2 className="text-2xl w-40 ml-8 font-bold lg:mr-32 "> Just For You</h2>
+</div>
+<div className="px-12 py-4 rounded border mr-20 border-black border-opacity-50 justify-center items-center gap-2.5 flex">
 
-<button className="text-black text-base  w-16 h-4 justify-center">See All</button>
+<button className="text-black text-base w-16 h-4 justify-center">See All</button>
 </div>
 </div>
 </div>
-<div className="flex flex-row px-32">
-<div className="flex w-full gap-6 overflow-x-hidden px-14 mb-20">
+<div className="flex flex-row flex-wrap justify-center items-center  justify-self-center lg:px-32">
+<div className="flex flex-row flex-wrap w-full gap-6 mb-20  justify-center overflow-x-hidden px-14 md:p-0 sm:px-0">
    {justforyou.map((product, index) => {
      return (
        <div className="flex flex-col gap-1 w-[14rem]" key={index}>

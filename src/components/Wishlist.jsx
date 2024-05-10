@@ -8,9 +8,9 @@ export default function Wishlist() {
   return (
     <>
       <Header /> 
-     <div className="flex flex-row justify-center items-center mt-20">
+     <div className="flex flex-row flex-wrap justify-center w-max-full items-center mt-20">
 
-     <div className="w-98 h-14 mb-20 items-center gap-96 flex flex-row justify-between">
+     <div className="lg:w-max h-14 mb-20 items-center lg:gap-96 md:gap-10 sm:gap-0 flex flex-row justify-between">
   <h2 className="text-center text-black text-xl w-48 inline-flex gap-4">Wishlist <span>(4)</span></h2>
   <div className="px-12 py-4 rounded border border-black border-opacity-50 justify-center items-center gap-2.5 flex">
 
@@ -18,8 +18,8 @@ export default function Wishlist() {
 </div>
 </div>
   </div>
-   <div className="flex flex-row px-32">
-   <div className="flex w-full gap-6 overflow-x-hidden px-14">
+   <div className="flex flex-row justify-center items-center xl:px-34 md:px-0 sm:p-0">
+   <div className="flex flex-row flex-wrap w-full gap-6 justify-center overflow-x-hidden px-14 md:p-0 sm:px-0">
         {wishlistProducts.map((product, index) => {
           return (
             <div className="flex flex-col gap-1 w-[14rem]" key={index}>
