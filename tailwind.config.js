@@ -7,10 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "black",
-        secondary: "white",
-        action: "#DB4444",
-        "green-cus": "#00FF66"
+        primary: "white",
+        action: "#DB4444"
       },
       backgroundColor: {
         primary: "white",
@@ -25,7 +23,7 @@ export default {
       },
       outlineColor: {
         "active": "#DB4444",
-      },      
+      }
     },
   },
   plugins: [],

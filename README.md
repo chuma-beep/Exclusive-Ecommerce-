@@ -23,6 +23,9 @@ started working on landing page.
 - flash sales section
 - categories section
 - best selling section
+- explore products section
+- new arrivals section
+- services section
 - footer
 
 ### Update: Member 2 (Wisdom)
@@ -32,6 +35,11 @@ started working on landing page.
 - Cart
 - WishList
 
+
+### Update: Member 3 (MJ)
+- About Section
+- Account Section
+- Checkout Section
 
 #### Steps to start working on this project
 

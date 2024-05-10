@@ -8,6 +8,8 @@ import FlashSales from "./FlashSales";
 import Categories from "./Categories";
 import BestSellingProducts from "./BestSellingProducts";
 import ExploreOurProducts from "./ExploreOurProducts";
+import NewArrivals from "./NewArrivals";
+import OurServices from "./OurServices";
 
 export default function LandingPage() {
   return (
@@ -106,6 +108,8 @@ export default function LandingPage() {
         </div>
       </section>
       <ExploreOurProducts />
+      <NewArrivals />
+      <OurServices />
       <Footer />
     </>
   );
