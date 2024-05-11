@@ -36,8 +36,14 @@ function Account(){
         <>
           <AccountHeader />
     
-          <Container style={{ marginTop: "50px", marginLeft: "87px", display: 'flex',  }}>
-            <RouterNavLink
+          <Container>
+
+
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+
+          
+           <div className="">
+           <RouterNavLink
               to="/"
               style={{
                 color: "gray",
@@ -56,11 +62,14 @@ function Account(){
             >
                My Account
             </RouterNavLink>
-            <div style={{marginLeft: '850px',}}>
+           </div>
+
+            <div style={{}}>
   <p>Welcome! <span style={{ color: '#DB4444',  border: 'none', fontSize: '14px', }}>Md Rimel</span></p>
 </div>
-          </Container>
-          <div style={{display: 'flex'}}>
+</div>
+         
+          <div className="form-box" style={{display: 'flex'}}>
 
           
           <div style={{width: '300px', height: '300px',  marginTop: '70px', marginLeft: '110px'}}>
@@ -85,7 +94,7 @@ function Account(){
             </div>
             </div>
             </div>
-            <div style={{width: '870px', height: '630px',  marginTop: '65px'}}>
+            <div >
                 <Typography variant="h1" sx={{fontSize: '20px', color: '#DB4444', textAlign: 'left', marginLeft: '130px', marginTop: '30px'}}>
                     Edit Your Profile
                 </Typography>
@@ -187,6 +196,7 @@ function Account(){
           
             </div>
             </div>
+            </Container>
            <Footer />
           </>
           )

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React,  { useState } from "react";
 import CheckoutHeader from "./CheckoutHeader";
 import { Container, Typography } from "@mui/material";
 import { NavLink as RouterNavLink } from "react-router-dom";
@@ -24,13 +24,12 @@ function Checkout() {
   };
   const [isChecked, setIsChecked] = useState(true);
   const handleCheckboxChange = () => {
-    setIsChecked(!isChecked); // Toggle checkbox state when clicked
+    setIsChecked(!isChecked); 
   };
 
-  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform form submission logic here, such as sending data to a server
+    
     console.log(formData);
   };
   return (
@@ -38,7 +37,7 @@ function Checkout() {
       <CheckoutHeader />
 
       <Container
-        style={{ marginTop: "50px", marginLeft: "87px", display: "flex" }}
+        style={{ marginTop: "20px"  }}
         className="upper-links"
       >
         <RouterNavLink
@@ -93,11 +92,11 @@ function Checkout() {
             marginRight: "0.5rem",
           }}
         >
-          CheckOut
+          Checkout
         </RouterNavLink>
       </Container>
 
-      <Container style={{ display: "flex",}}>
+      <Container className="checkout-container" style={{ display: "flex", gap: '2px'}}>
         <div
           className="billing"
           style={{
@@ -220,28 +219,23 @@ function Checkout() {
                 type="checkbox"
                 id="checkbox "
                 name="checkbox"
-                checked={isChecked} // Set checked attribute to true
+                checked={isChecked} // Set checked attribute to true  
                 onChange={handleCheckboxChange}
                 className="checkbox-container"
               ></input>
               <span>
-                <Typography
-                  variant="body"
-                  style={{ fontSize: "15px", marginLeft: "1rem" }}
-                >
-                  Save this information for faster check-out next time
-                </Typography>
+                
+                  <p className="save"> Save this information for faster check-out next time</p>
+                
               </span>
             </div>
           </form>
         </div>
 
-        <div
+        <div className="cashout"
           style={{
             width: "527px",
             height: "800px",
-          
-            marginTop: "120px",
           }}
         >
           <div
@@ -249,11 +243,10 @@ function Checkout() {
             style={{ width: "425px", height: "140px",  }}
           >
             <div
-              className="item1"
+              className="item"
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
+                display: 'flex',
+                justifyContent:'space-between'
               }}
             >
               <img src="src/assets/Gamepad.png"></img>
@@ -265,12 +258,13 @@ function Checkout() {
               </p>
             </div>
             <div
-              className="item1"
+              className="item"
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
+                
+                display: 'flex',
+                justifyContent:'space-between'
               }}
+    
             >
               <img src="src/assets/Monitor.png"></img>
               <p>
@@ -286,15 +280,15 @@ function Checkout() {
             style={{
               width: "422px",
               height: "136px",
-              marginTop: "20px",
+              marginTop: "30px",
             }}
           >
+            <hr className="line"style={{display: 'none'}}></hr>
             <div
               className="sub"
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "10px",
+                display: 'flex',
+                justifyContent:'space-between'
               }}
             >
               <p>
@@ -306,11 +300,10 @@ function Checkout() {
             </div>
             <hr style={{ color: "red" }} />
             <div
-              className="shipping"
+              className="sub"
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "10px",
+                display: 'flex',
+                justifyContent:'space-between'
               }}
             >
               <p>
@@ -324,9 +317,8 @@ function Checkout() {
             <div
               className="sub"
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "10px",
+                display: 'flex',
+                justifyContent:'space-between'
               }}
             >
               <p>
@@ -339,16 +331,18 @@ function Checkout() {
           </div>
         
         
-  <div className="payment-method-item" style={{display: 'flex', gap: '1.5rem'}}>
+  <div className="payment-method-item" style={{display: 'flex', gap: '0.6rem', width: '427px', height: '28px',}}>
     <input type="radio" name="payment-method" id="bank" />
     <label htmlFor="bank" style={{ color: "black", fontWeight: "bold", fontSize: "16px", }}>
       Bank
       </label>
-    
-     <img src="src/assets/Bkash.png" alt="Bkash" />
+   
+ <img src="src/assets/Bkash.png" alt="Bkash" />
         <img src="src/assets/Visa.png" alt="Visa"  />
         <img src="src/assets/Mastercard.png" alt="Mastercard"  />
         <img src="src/assets/Nagad.png" alt="Nagad" />
+    
+    
   </div>
 
               <div className="payment-method-item2" style={{display: 'flex', gap: '1.5rem'}}>
@@ -377,7 +371,7 @@ function Checkout() {
             placeholder="Coupon code"
             style={{ width: "300px", height: "56px", margin: "0 auto", borderRadius: '5px'}}
           />
-          <button style={{width: '211px', height: '56px', backgroundColor: '#DB4444', color: 'white', marginLeft: '10px', borderRadius: '5px'}}>Apply Coupon</button>
+          <button className="apply-btn" style={{width: '211px', height: '56px', backgroundColor: '#DB4444', color: 'white', marginLeft: '10px', borderRadius: '5px'}}>Apply Coupon</button>
           <button style={{width: '190px', height: '56px', backgroundColor: '#DB4444', color: 'white', marginTop: '25px', borderRadius: '5px'}}>Place Order</button>
         </div>
       </Container>

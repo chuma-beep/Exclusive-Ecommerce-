@@ -32,16 +32,16 @@ export default function Cart() {
       <div className="h-11 left-[710px] top-[29px] absolute  ">
       
       <div className="w-12 top-[6px] absolute justify-start items-center gap-4 inline-flex">
-<div className="py-2 px-3 inline-block bg-white border border-gray-200 rounded-lg" data-hs-input-number="">
-  <div className="flex items-center gap-x-1.5">
-    <button type="button" className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-input-number-decrement="">
-      <svg className="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<div class="py-2 px-3 inline-block bg-white border border-gray-200 rounded-lg" data-hs-input-number="">
+  <div class="flex items-center gap-x-1.5">
+    <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-input-number-decrement="">
+      <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M5 12h14"></path>
       </svg>
     </button>
-    <input className="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0" type="text" value="0" data-hs-input-number-input=""/>
-    <button type="button" className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-input-number-increment="">
-      <svg className="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <input class="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0" type="text" value="0" data-hs-input-number-input=""/>
+    <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-input-number-increment="">
+      <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M5 12h14"></path>
         <path d="M12 5v14"></path>
       </svg>
@@ -93,7 +93,7 @@ export default function Cart() {
       <span className="text-black text-base font-normal leading-normal">$1750</span>
     </div>
     <div className="px-12 py-3 w-64 left-[89px] top-[236px] mt-10 absolute bg-red-500 rounded justify-center items-center gap-2.5 inline-flex cursor-pointer hover:shadow-lg hover:shadow-gray-400">
-      <button className="text-neutral-50 text-base font-medium leading-normal">Proceed to checkout</button>
+      <Link to="/checkout"><button className="text-neutral-50 text-base font-medium leading-normal">Proceed to checkout</button></Link>
     </div>
     <div className="w-96 h-px left-[24px] top-[124px] absolute opacity-40">
       <div className="w-96 h-px left-0 top-0 absolute border border-black"></div>
