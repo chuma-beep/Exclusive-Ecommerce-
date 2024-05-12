@@ -4,20 +4,23 @@ import About from "./components/About";
 import Cart from "./components/Cart";
 import Account from "./components/Account";
 import Checkout from "./components/Checkout";
-
+import Wishlist from "./components/Wishlist";
+import SignUp from "./components/SignUp"
+import Login from "./components/Login"
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-     
-       
-        {/* <Route path="/*" element={<NotFound />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/my-account" element={<Account />} />
-        <Route path="/checkout" element={<Checkout/>} />
-        <Route path="/cart" element={<Cart/>} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        {/* <Route path="/*" element={<NotFound />} /> */}
       </Routes>
     </Router>
   );

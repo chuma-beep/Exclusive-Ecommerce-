@@ -13,7 +13,7 @@ export default function BestSellingProducts() {
         <h2 className="text-3xl font-bold">Best Selling Products</h2>
         <div className="flex items-center gap-4">
         <Link
-          className="px-4 py-2 rounded-md bg-action w-max text-secondary hover:translate-x-2 hover:-translate-y-1 transition-all"
+          className="px-4 py-2 rounded-md bg-action w-max text-primary hover:translate-x-2 hover:-translate-y-1 transition-all"
           to="/"
         >
           View All

@@ -17,7 +17,7 @@ export default function NewArrivals() {
             return (
               index === 0 && (
                 <div
-                  className="flex items-center justify-center  w-full h-full relative text-secondary"
+                  className="flex items-center justify-center  w-full h-full relative text-primary"
                   key={crypto.randomUUID()}
                 >
                   <img
@@ -47,7 +47,7 @@ export default function NewArrivals() {
               return (
                 index === 1 && (
                   <div
-                    className="grid place-items-end w-full h-[20rem] relative text-secondary"
+                    className="grid place-items-end w-full h-[20rem] relative text-primary"
                     key={crypto.randomUUID()}
                   >
                     <img
@@ -78,7 +78,7 @@ export default function NewArrivals() {
                 return (
                   index === 2 && (
                     <div
-                      className="flex items-center justify-center  w-full h-full relative text-secondary"
+                      className="flex items-center justify-center  w-full h-full relative text-primary"
                       key={crypto.randomUUID()}
                     >
                       <img
@@ -108,7 +108,7 @@ export default function NewArrivals() {
                 return (
                   index === 3 && (
                     <div
-                      className="flex items-center justify-center w-full h-full relative p-6 text-secondary"
+                      className="flex items-center justify-center w-full h-full relative p-6 text-primary"
                       key={crypto.randomUUID()}
                     >
                       <img
