@@ -27,7 +27,7 @@ export default function HeroCarousel({ data }) {
             }
             key={index}
           >
-            <div className="w-1/2 h-full text-secondary flex flex-col justify-center gap-5 p-4">
+            <div className="w-1/2 h-full text-primary flex flex-col justify-center gap-5 p-4">
               <div className="flex gap-3 items-center">
                 {item.logo && (
                   <img

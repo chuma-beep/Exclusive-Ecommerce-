@@ -1,6 +1,7 @@
 import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
 import { categories } from "../data/categoriesData.json";
 import { Link } from "react-router-dom";
+import "../categories.css"
 
 export default function Categories() {
   return (
@@ -12,10 +13,10 @@ export default function Categories() {
       <div className="flex w-full items-center gap-6 mb-8 justify-between">
         <h2 className="text-3xl font-bold">Browse By Category</h2>
         <div className="flex items-center gap-4">
-          <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-secondary flex items-center justify-center">
+          <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-primary flex items-center justify-center">
             <HiArrowLeft />
           </button>
-          <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-secondary flex items-center justify-center">
+          <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-primary flex items-center justify-center">
             <HiArrowRight />
           </button>
         </div>
@@ -23,7 +24,7 @@ export default function Categories() {
       <div className="flex w-full flex-wrap justify-center gap-6 overflow-x-hidden border-b-[3px] border-secondary pb-16">
         {categories.map((category, index) => {
           return (
-            <Link className="flex flex-col gap-1 w-[14rem] h-[10rem] border-[3px] border-secondary rounded-lg p-4 items-center justify-center hover:bg-action transition-all hover:text-secondary" id="category-p" to="/" key={index}>
+            <Link className="flex flex-col gap-1 w-[14rem] h-[10rem] border-[3px] border-secondary rounded-lg p-4 items-center justify-center hover:bg-action transition-all hover:text-primary" id="category-p" to="/" key={index}>
                 <img className="category-icon" src={category.icon} alt={category.alt} />
                 <h3>{category.title}</h3>
             </Link>

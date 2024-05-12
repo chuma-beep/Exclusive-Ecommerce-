@@ -13,10 +13,10 @@ export default function ExploreOurProducts() {
       <div className="flex w-full items-center gap-6 mb-8 justify-between">
         <h2 className="text-3xl font-bold">Explore Our Products</h2>
         <div className="flex items-center gap-4">
-          <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-secondary flex items-center justify-center">
+          <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-primary flex items-center justify-center">
             <HiArrowLeft />
           </button>
-          <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-secondary flex items-center justify-center">
+          <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-primary flex items-center justify-center">
             <HiArrowRight />
           </button>
         </div>
@@ -27,7 +27,7 @@ export default function ExploreOurProducts() {
             <div className="flex flex-col gap-1 w-[14rem]" key={index}>
               <div className="flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
                 <img className="" src={product.img} alt={product.alt} />
-                <span className="absolute w-max h-max px-2 rounded-md bg-green-cus left-3 top-2 text-sm text-secondary">
+                <span className="absolute w-max h-max px-2 rounded-md bg-green-cus left-3 top-2 text-sm text-primary">
                   {product.new && product.new}
                 </span>
                 <div className="absolute top-2 right-3 flex flex-col gap-4">
@@ -53,7 +53,7 @@ export default function ExploreOurProducts() {
       </div>
       <div className="flex mt-8 items-center justify-center w-full">
         <Link
-          className="px-4 py-2 rounded-md bg-action w-max text-secondary hover:translate-x-2 hover:-translate-y-1 transition-all"
+          className="px-4 py-2 rounded-md bg-action w-max text-primary hover:translate-x-2 hover:-translate-y-1 transition-all"
           to="/"
         >
           View All Products

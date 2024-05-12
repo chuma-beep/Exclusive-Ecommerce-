@@ -8,7 +8,9 @@ export default {
     extend: {
       colors: {
         primary: "white",
-        action: "#DB4444"
+        secondary: "black",
+        action: "#DB4444",
+        "green-cus": "#00FF66"
       },
       backgroundColor: {
         primary: "white",

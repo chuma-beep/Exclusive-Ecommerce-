@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Typography, Grid, Button } from "@mui/material";
 import { styled } from "@mui/system";
 import { NavLink as RouterNavLink } from "react-router-dom";
@@ -38,7 +37,7 @@ function About() {
           About
         </RouterNavLink>
       </Container>
-{/* Main Content */}
+      {/* Main Content */}
       <Container style={{ marginTop: "50px" }}>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
@@ -60,7 +59,7 @@ function About() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <img
-              src="src/assets/two-ladies.png"
+              src="/assets/two-ladies.png"
               alt=""
               style={{ width: "100%", maxWidth: "600px", height: "auto" }}
             />
@@ -80,7 +79,7 @@ function About() {
               }}
             >
               <ServiceCard
-                icon="src/assets/sellers.png"
+                icon="/assets/sellers.png"
                 number="10.5K"
                 description="Sellers active on our site"
               />
@@ -97,7 +96,7 @@ function About() {
               }}
             >
               <ServiceCard
-                icon="src/assets/monthly-sale.png"
+                icon="/assets/monthly-sale.png"
                 number="33K"
                 description="Monthly Product sales"
               />
@@ -108,13 +107,13 @@ function About() {
               style={{
                 width: "100%",
                 height: "230px",
-                
+
                 border: "1px solid #D3D3D3",
                 borderRadius: "10px",
               }}
             >
               <ServiceCard
-                icon="src/assets/Customers.png"
+                icon="/assets/Customers.png"
                 number="33K"
                 description="Customers active on our site"
               />
@@ -131,7 +130,7 @@ function About() {
               }}
             >
               <ServiceCard
-                icon="src/assets/Annual.png"
+                icon="/assets/Annual.png"
                 number="25K"
                 description="Annual gross sales on our site"
               />
@@ -139,10 +138,10 @@ function About() {
           </Grid>
         </Grid>
       </Container>
-{/* Team members */}
+      {/* Team members */}
       <Container
-      className="team-container"
-        style={{ marginTop: "20px", display: "flex", }}
+        className="team-container"
+        style={{ marginTop: "20px", display: "flex" }}
       >
         <Grid
           container
@@ -151,7 +150,7 @@ function About() {
         >
           <TeamMemberContainer item xs={12} sm={6} md={4} lg={3}>
             <div style={{ textAlign: "center" }}>
-              <img src="src/assets/tomcruise.png" alt="Tom Cruise"  />
+              <img src="/assets/tomcruise.png" alt="Tom Cruise" />
               <div style={{ marginTop: "20px" }}>
                 <Typography
                   variant="h2"
@@ -162,19 +161,26 @@ function About() {
                 <Typography variant="body1" sx={{ fontSize: "1rem" }}>
                   Founder and Chairman
                 </Typography>
-                <Button style={{ display: "flex", gap: "1rem", mt: "20px", marginLeft: '50px'}}>
+                <Button
+                  style={{
+                    display: "flex",
+                    gap: "1rem",
+                    mt: "20px",
+                    marginLeft: "50px",
+                  }}
+                >
                   <img
-                    src="src/assets/icon-Twitter.png"
+                    src="/assets/icon-Twitter.png"
                     style={{ width: "24px", height: "24px" }}
                     alt="Twitter"
                   />
                   <img
-                    src="src/assets/icon-instagram.png"
+                    src="/assets/icon-instagram.png"
                     style={{ width: "24px", height: "24px" }}
                     alt="Instagram"
                   />
                   <img
-                    src="src/assets/icon-Linkedin.png"
+                    src="/assets/icon-Linkedin.png"
                     style={{ width: "24px", height: "24px" }}
                     alt="Linkedin"
                   />
@@ -184,7 +190,7 @@ function About() {
           </TeamMemberContainer>
           <TeamMemberContainer item xs={12} sm={6} md={4} lg={3}>
             <div style={{ textAlign: "center" }}>
-              <img src="src/assets/emmawatson.png" alt="Emma watson" />
+              <img src="/assets/emmawatson.png" alt="Emma watson" />
               <div style={{ marginTop: "20px" }}>
                 <Typography
                   variant="h2"
@@ -195,19 +201,26 @@ function About() {
                 <Typography variant="body1" sx={{ fontSize: "1rem" }}>
                   Managing Director
                 </Typography>
-                <Button style={{ display: "flex", gap: "1rem", mt: "20px" , marginLeft: '50px'}}>
+                <Button
+                  style={{
+                    display: "flex",
+                    gap: "1rem",
+                    mt: "20px",
+                    marginLeft: "50px",
+                  }}
+                >
                   <img
-                    src="src/assets/icon-Twitter.png"
+                    src="/assets/icon-Twitter.png"
                     style={{ width: "24px", height: "24px" }}
                     alt="Twitter"
                   />
                   <img
-                    src="src/assets/icon-instagram.png"
+                    src="/assets/icon-instagram.png"
                     style={{ width: "24px", height: "24px" }}
                     alt="Instagram"
                   />
                   <img
-                    src="src/assets/icon-Linkedin.png"
+                    src="/assets/icon-Linkedin.png"
                     style={{ width: "24px", height: "24px" }}
                     alt="Linkedin"
                   />
@@ -218,7 +231,7 @@ function About() {
 
           <TeamMemberContainer item xs={12} sm={6} md={4} lg={3}>
             <div style={{ textAlign: "center" }}>
-              <img src="src/assets/willsmith.png" alt="will smith" />
+              <img src="/assets/willsmith.png" alt="will smith" />
               <div style={{ marginTop: "20px" }}>
                 <Typography
                   variant="h2"
@@ -229,19 +242,26 @@ function About() {
                 <Typography variant="body1" sx={{ fontSize: "1rem" }}>
                   Product Designer
                 </Typography>
-                <Button style={{ display: "flex", gap: "1rem", mt: "20px" , marginLeft: '50px'}}>
+                <Button
+                  style={{
+                    display: "flex",
+                    gap: "1rem",
+                    mt: "20px",
+                    marginLeft: "50px",
+                  }}
+                >
                   <img
-                    src="src/assets/icon-Twitter.png"
+                    src="/assets/icon-Twitter.png"
                     style={{ width: "24px", height: "24px" }}
                     alt="Twitter"
                   />
                   <img
-                    src="src/assets/icon-instagram.png"
+                    src="/assets/icon-instagram.png"
                     style={{ width: "24px", height: "24px" }}
                     alt="Instagram"
                   />
                   <img
-                    src="src/assets/icon-Linkedin.png"
+                    src="/assets/icon-Linkedin.png"
                     style={{ width: "24px", height: "24px" }}
                     alt="Linkedin"
                   />
@@ -251,31 +271,27 @@ function About() {
           </TeamMemberContainer>
         </Grid>
       </Container>
-<div className="pagination">
-  <img 
-  style={{margin: '0 auto'}}
-  src="src/assets/pagination.png" />
-</div>
+      <div className="pagination">
+        <img style={{ margin: "0 auto" }} src="/assets/pagination.png" />
+      </div>
       {/* Full Services */}
       <Container
         style={{ marginTop: "50px", marginBottom: "50px", marginRight: "10px" }}
       >
         <Grid container spacing={4}>
-            
           <FullServiceCard
-            icon="src/assets/fast.png"
+            icon="/assets/fast.png"
             title="FREE AND FAST DELIVERY"
             description="Free delivery for all orders over $140"
-           
           />
-         
+
           <FullServiceCard
-            icon="src/assets/support.png"
+            icon="/assets/support.png"
             title="24/7 CUSTOMER SERVICE"
             description="Friendly 24/7 customer support"
           />
           <FullServiceCard
-            icon="src/assets/money-back.png"
+            icon="/assets/money-back.png"
             title="MONEY BACK GUARANTEE"
             description="We return your money within 30 days"
           />
@@ -288,7 +304,16 @@ function About() {
 }
 
 const ServiceCard = ({ icon, number, description }) => (
-  <div style={{ padding: "20px", borderRadius: "5px", textAlign:'center', display: "flex", flexDirection: "column", alignItems: "center" }}>
+  <div
+    style={{
+      padding: "20px",
+      borderRadius: "5px",
+      textAlign: "center",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    }}
+  >
     <img
       src={icon}
       alt=""
@@ -296,11 +321,16 @@ const ServiceCard = ({ icon, number, description }) => (
     />
     <Typography
       variant="h2"
-      sx={{ fontSize: "2rem", fontWeight: "bold", mb: "10px", textAlign: "center" }}
+      sx={{
+        fontSize: "2rem",
+        fontWeight: "bold",
+        mb: "10px",
+        textAlign: "center",
+      }}
     >
       {number}
     </Typography>
-    <Typography variant="body1" sx={{ fontSize: "1rem" , textAlign: 'center'}}>
+    <Typography variant="body1" sx={{ fontSize: "1rem", textAlign: "center" }}>
       {description}
     </Typography>
   </div>
@@ -312,21 +342,33 @@ const FullServiceCard = ({ icon, title, description }) => (
       style={{
         padding: "20px",
         borderRadius: "5px",
-       
       }}
     >
       <img
         src={icon}
         alt=""
-        style={{ width: "80px", height: "80px", marginBottom: "25px" , marginLeft: "100px" }}
+        style={{
+          width: "80px",
+          height: "80px",
+          marginBottom: "25px",
+          marginLeft: "100px",
+        }}
       />
       <Typography
         variant="h2"
-        sx={{ fontSize: "20px", fontWeight: "bold", mb: "10px", textAlign: "center" }}
+        sx={{
+          fontSize: "20px",
+          fontWeight: "bold",
+          mb: "10px",
+          textAlign: "center",
+        }}
       >
         {title}
       </Typography>
-      <Typography variant="body1" sx={{ fontSize: "14px", textAlign: 'center' }}>
+      <Typography
+        variant="body1"
+        sx={{ fontSize: "14px", textAlign: "center" }}
+      >
         {description}
       </Typography>
     </div>
