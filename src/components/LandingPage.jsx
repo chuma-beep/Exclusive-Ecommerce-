@@ -10,8 +10,53 @@ import BestSellingProducts from "./BestSellingProducts";
 import ExploreOurProducts from "./ExploreOurProducts";
 import NewArrivals from "./NewArrivals";
 import OurServices from "./OurServices";
+import { useState, useEffect } from "react";
 
 export default function LandingPage() {
+  const [targetDate] = useState(() => {
+    const initialDate = new Date();
+    initialDate.setDate(initialDate.getDate() + 5);
+    initialDate.setSeconds(initialDate.getSeconds() - 45);
+    return initialDate;
+  });
+
+  const calculateTimeLeft = () => {
+    // const difference = +new Date("2024-05-18") - +new Date();
+
+    const difference = +targetDate - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24))
+        .toString()
+        .padStart(2, "0"),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24)
+          .toString()
+          .padStart(2, "0"),
+        minutes: Math.floor((difference / 1000 / 60) % 60)
+          .toString()
+          .padStart(2, "0"),
+        seconds: Math.floor((difference / 1000) % 60)
+          .toString()
+          .padStart(2, "0"),
+      };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  });
+
+  
   return (
     <>
       <Header />
@@ -85,20 +130,20 @@ export default function LandingPage() {
               Enhance Your Music Experience
             </h3>
             <div className="flex gap-6">
-              <div className="flex flex-col gap-0 text-[0.6rem] font-bold p-1 text-secondary rounded-full bg-secondary w-[3.7rem] h-[3.7rem] items-center justify-center">
-                <span>23</span>
-                <span>Hours</span>
-              </div>
-              <div className="flex flex-col gap-0 text-[0.6rem] font-bold p-1 text-secondary rounded-full bg-secondary w-[3.7rem] h-[3.7rem] items-center justify-center">
-                <span>05</span>
+            <div className="flex flex-col gap-0 text-[0.6rem] font-bold p-1 text-secondary rounded-full bg-secondary w-[3.7rem] h-[3.7rem] items-center justify-center">
+                <span>{timeLeft.days}</span>
                 <span>Days</span>
               </div>
               <div className="flex flex-col gap-0 text-[0.6rem] font-bold p-1 text-secondary rounded-full bg-secondary w-[3.7rem] h-[3.7rem] items-center justify-center">
-                <span>49</span>
+                <span>{timeLeft.hours}</span>
+                <span>Hours</span>
+              </div>
+              <div className="flex flex-col gap-0 text-[0.6rem] font-bold p-1 text-secondary rounded-full bg-secondary w-[3.7rem] h-[3.7rem] items-center justify-center">
+                <span>{timeLeft.minutes}</span>
                 <span>Minutes</span>
               </div>
               <div className="flex flex-col gap-0 text-[0.6rem] font-bold p-1 text-secondary rounded-full bg-secondary w-[3.7rem] h-[3.7rem] items-center justify-center">
-                <span>44</span>
+                <span>{timeLeft.seconds}</span>
                 <span>Seconds</span>
               </div>
             </div>

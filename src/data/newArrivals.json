@@ -1,6 +1,7 @@
 {
   "newArrivals": [
     {
+      "id": "newarr1",
       "product": "PlayStation 5",
       "src": "/new-arrival-img/ps5.svg",
       "alt": "PlayStation 5",
@@ -8,6 +9,7 @@
       "shop link": "/"
     },
     {
+      "id": "newarr2",
       "product": "Women’s Collections",
       "src": "/new-arrival-img/women-hat.svg",
       "alt": "woman wearing hat",
@@ -15,6 +17,7 @@
       "shop link": "/"
     },
     {
+      "id": "newarr3",
       "product": "Speakers",
       "src": "/new-arrival-img/speakers.svg",
       "alt": "Speakers",
@@ -22,6 +25,7 @@
       "shop link": "/"
     },
     {
+      "id": "newarr4",
       "product": "Perfume",
       "src": "/new-arrival-img/perfumes.svg",
       "alt": "Perfume",
