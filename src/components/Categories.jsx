@@ -1,7 +1,7 @@
 import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
 import { categories } from "../data/categoriesData.json";
 import { Link } from "react-router-dom";
-import "../categories.css"
+import "../components-css/categories.css"
 
 export default function Categories() {
   return (

@@ -3,6 +3,7 @@ import { styled } from "@mui/system";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import AboutHeader from "./AboutHeader";
 import Footer from "./Footer";
+import OurServices from "./OurServices";
 
 const TeamMemberContainer = styled(Grid)(({ theme }) => ({
   width: "100%",
@@ -275,7 +276,7 @@ function About() {
         <img style={{ margin: "0 auto" }} src="/assets/pagination.png" />
       </div>
       {/* Full Services */}
-      <Container
+      {/* <Container
         style={{ marginTop: "50px", marginBottom: "50px", marginRight: "10px" }}
       >
         <Grid container spacing={4}>
@@ -296,7 +297,9 @@ function About() {
             description="We return your money within 30 days"
           />
         </Grid>
-      </Container>
+      </Container> */}
+
+      <OurServices />
 
       <Footer />
     </>
@@ -336,43 +339,43 @@ const ServiceCard = ({ icon, number, description }) => (
   </div>
 );
 
-const FullServiceCard = ({ icon, title, description }) => (
-  <Grid item xs={12} sm={4}>
-    <div
-      style={{
-        padding: "20px",
-        borderRadius: "5px",
-      }}
-    >
-      <img
-        src={icon}
-        alt=""
-        style={{
-          width: "80px",
-          height: "80px",
-          marginBottom: "25px",
-          marginLeft: "100px",
-        }}
-      />
-      <Typography
-        variant="h2"
-        sx={{
-          fontSize: "20px",
-          fontWeight: "bold",
-          mb: "10px",
-          textAlign: "center",
-        }}
-      >
-        {title}
-      </Typography>
-      <Typography
-        variant="body1"
-        sx={{ fontSize: "14px", textAlign: "center" }}
-      >
-        {description}
-      </Typography>
-    </div>
-  </Grid>
-);
+// const FullServiceCard = ({ icon, title, description }) => (
+//   <Grid item xs={12} sm={4}>
+//     <div
+//       style={{
+//         padding: "20px",
+//         borderRadius: "5px",
+//       }}
+//     >
+//       <img
+//         src={icon}
+//         alt=""
+//         style={{
+//           width: "80px",
+//           height: "80px",
+//           marginBottom: "25px",
+//           marginLeft: "100px",
+//         }}
+//       />
+//       <Typography
+//         variant="h2"
+//         sx={{
+//           fontSize: "20px",
+//           fontWeight: "bold",
+//           mb: "10px",
+//           textAlign: "center",
+//         }}
+//       >
+//         {title}
+//       </Typography>
+//       <Typography
+//         variant="body1"
+//         sx={{ fontSize: "14px", textAlign: "center" }}
+//       >
+//         {description}
+//       </Typography>
+//     </div>
+//   </Grid>
+// );
 
 export default About;
