@@ -2,6 +2,7 @@ import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
 import { exploreOurProducts } from "../data/exploreOurProducts.json";
 import { HiOutlineHeart, HiOutlineEye } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import StarRatings from "react-star-ratings";
 
 export default function ExploreOurProducts() {
   return (
@@ -25,8 +26,8 @@ export default function ExploreOurProducts() {
         {exploreOurProducts.map((product, index) => {
           return (
             <div className="flex flex-col gap-1 w-[14rem]" key={index}>
-              <div className="flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
-                <img className="" src={product.img} alt={product.alt} />
+              <div className="group overflow-hidden flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
+                <img className="hover:scale-[1.2] transition-all" src={product.img} alt={product.alt} />
                 <span className="absolute w-max h-max px-2 rounded-md bg-green-cus left-3 top-2 text-sm text-primary">
                   {product.new && product.new}
                 </span>
@@ -38,13 +39,19 @@ export default function ExploreOurProducts() {
                     <HiOutlineEye className="w-full h-full" />
                   </button>
                 </div>
+                <button className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block">Add To Cart</button>
               </div>
               <h3 className="text-md font-medium">{product.name}</h3>
               <div className="flex gap-2 items-center">
                 <span className="text-action">{`$${product.price}`}</span>
                 <div>
-                <span>star rating</span>
-                <span>({product.stars})</span>
+                <StarRatings
+                  rating={product.stars}
+                  starDimension="20px"
+                  starSpacing="2px"
+                  starRatedColor="orange"
+                />
+                <span>({product["times rated"]})</span>
               </div>
               </div>
             </div>
