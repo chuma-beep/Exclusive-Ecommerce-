@@ -1,8 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import {
   HiOutlineSearch,
+  HiOutlineHeart,
+  HiOutlineShoppingCart
   
 } from "react-icons/hi";
+import { CiUser } from "react-icons/ci";
  function CheckoutHeader() {
   return (
     <header className="flex w-full h-[6rem] px-28 gap-[7rem] items-center border-b-2 border-b-secondary">
@@ -21,13 +24,13 @@ import {
           </div>
           <div className="flex gap-8 items-center">
             <Link className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl hover:bg-secondary" to="/wishlist">
-              <img src="src/assets/wishlist.png" className="w-full h-full p-1" />
+              <HiOutlineHeart className="w-full h-full p-1" />
             </Link>
             <Link className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl hover:bg-secondary" to="/cart">
-            <img src="src/assets/redcart.png" className="w-full h-full p-1" />
+            <HiOutlineShoppingCart className="w-full h-full p-1" />
             </Link>
             <Link className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl bold hover:bg-secondary" to="/my-account">
-<img src="src/assets/user.png" className="w-full h-full p-1" />
+<CiUser className="w-full h-full p-1" />
 </Link>
           </div>
         </div>

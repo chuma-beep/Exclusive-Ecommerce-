@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 export default function HeroCarousel({ data }) {
   const { heroCarouselData } = data;
-  const [slide, setSlide] = useState(0);
+  const [slide, setSlide] = useState(0); 
 
   useEffect(() => {
     const slideInterval = setInterval(() => {

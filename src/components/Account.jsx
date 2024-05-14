@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Container, Typography, Grid, Button } from "@mui/material";
-
+import "../components-css/account-checkout.css"
 import {NavLink as RouterNavLink, Link } from "react-router-dom";
 import AccountHeader from "./AccountHeader";
 import Footer from "./Footer";
@@ -106,6 +106,7 @@ function Account(){
             <input
               type="text"
               id="firstName"
+              className="my-input"
               name="firstName"
               value={formData.firstName}
               placeholder="Md"
@@ -118,6 +119,7 @@ function Account(){
               type="text"
               id="lastName"
               name="lastName"
+              className="my-input"
               value={formData.lastName}
               placeholder="Rimel"
               onChange={handleInputChange}
@@ -132,6 +134,7 @@ function Account(){
               type="email"
               id="email"
               name="email"
+             
               value={formData.email}
               placeholder="rimel1111@gmail.com"
               onChange={handleInputChange}
@@ -144,6 +147,7 @@ function Account(){
               type="text"
               id="address"
               name="address"
+              className="my-input"
               value={formData.address}
               placeholder="Kingston, 5236, United States"
               onChange={handleInputChange}
