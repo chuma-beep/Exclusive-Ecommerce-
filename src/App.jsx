@@ -7,6 +7,7 @@ import Checkout from "./components/Checkout";
 import Wishlist from "./components/Wishlist";
 import SignUp from "./components/SignUp"
 import Login from "./components/Login"
+import ViewProduct from "./components/ViewProduct";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/product/:productID" element={<ViewProduct />} />
         {/* <Route path="/*" element={<NotFound />} /> */}
       </Routes>
     </Router>

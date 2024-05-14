@@ -26,6 +26,9 @@ started working on landing page.
 - explore products section
 - new arrivals section
 - services section
+- count down timer
+- star rating
+- search products by name
 - footer
 
 ### Update: Member 2 (Wisdom)
