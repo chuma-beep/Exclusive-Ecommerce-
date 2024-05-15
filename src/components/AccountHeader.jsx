@@ -4,6 +4,7 @@ import {
   HiOutlineHeart,
   HiOutlineShoppingCart,
 } from "react-icons/hi";
+import { CiUser } from "react-icons/ci";
 export default function Header() {
   return (
     <header className="flex w-full h-[6rem] px-28 gap-[7rem] items-center border-b-2 border-b-secondary">
@@ -28,9 +29,8 @@ export default function Header() {
               <HiOutlineShoppingCart className="w-full h-full p-1" />
             </Link>
             <Link className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl font-bold hover:bg-secondary" to="/my-account">
-  <div className="bg-customRed rounded-2xl w-[2rem] h-[2rem] flex items-center justify-center">
-    <img src="src/assets/user.png" className="w-full h-full p-1" />
-  </div>
+    <CiUser className="w-full h-full p-1" style={{background: '#DB4444', borderRadius: '50%', color: 'white'}}  />
+  
 </Link>
 
 
