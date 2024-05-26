@@ -10,7 +10,7 @@ export default function BestSellingProducts() {
 
   async function getProducts() {
   try {
-    const response = await fetch('../public/data/bestSellingProducts.json');
+    const response = await fetch('../data/bestSellingProducts.json');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

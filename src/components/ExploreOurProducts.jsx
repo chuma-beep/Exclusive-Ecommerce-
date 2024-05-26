@@ -13,7 +13,7 @@ export default function ExploreOurProducts() {
 
   async function getProducts() {
     try {
-      const response = await fetch('../public/data/exploreOurProducts.json');
+      const response = await fetch('../data/exploreOurProducts.json');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
