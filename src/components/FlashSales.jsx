@@ -56,7 +56,7 @@ export default function FlashSales() {
 
   async function getProducts() {
     try {
-      const response = await fetch('../public/data/flashSalesProducts.json');
+      const response = await fetch('../data/flashSalesProducts.json');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
