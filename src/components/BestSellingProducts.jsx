@@ -1,4 +1,3 @@
-//import { bestSellingProducts } from "../data/bestSellingProducts.json";
 import { HiOutlineHeart, HiOutlineEye } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import StarRatings from "react-star-ratings"; 
