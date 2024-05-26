@@ -1,11 +1,15 @@
 import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
-import { flashSalesProducts } from "../data/flashSalesProducts.json";
+//import { flashSalesProducts } from "../public/data/flashSalesProducts.json";
 import { HiOutlineHeart, HiOutlineEye } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import StarRatings from "react-star-ratings";
+import { CartContext } from "../context/cart-context";
 
 export default function FlashSales() {
+  const [products, setProducts] = useState([]);
+  const { addToCart } = useContext(CartContext);
+
   const [targetDate] = useState(() => {
     const initialDate = new Date();
     initialDate.setDate(initialDate.getDate() + 6);
@@ -49,6 +53,27 @@ export default function FlashSales() {
     return () => clearTimeout(timer);
   });
 
+
+  async function getProducts() {
+    try {
+      const response = await fetch('../public/data/flashSalesProducts.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const text = await response.text();
+      console.log("Raw response text:", text); 
+      const data = JSON.parse(text);
+      setProducts(data.flashSalesProducts);  
+    } catch (error) {
+      console.error('Failed to fetch products:', error);
+    }
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+
   return (
     <section className="w-full px-28 my-14">
       <div className="flex items-center gap-3 mb-4">
@@ -86,7 +111,11 @@ export default function FlashSales() {
         </div>
       </div>
       <div className="flex w-full flex-wrap justify-center gap-6 overflow-x-hidden">
-        {flashSalesProducts.map((product) => {
+
+
+
+
+        {products.map((product) => {
           return (
             <div className="flex flex-col gap-1 w-[14rem]" key={product.id}>
               <div className="group flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative transition-all overflow-hidden">
@@ -106,7 +135,7 @@ export default function FlashSales() {
                     <HiOutlineEye className="w-full h-full" />
                   </button>
                 </div>
-                <button className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block">
+                <button className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block" onClick={() => addToCart(product)}>
                   Add To Cart
                 </button>
               </div>
@@ -131,7 +160,7 @@ export default function FlashSales() {
       <div className="flex mt-8 items-center justify-center w-full">
         <Link
           className="px-4 py-2 rounded-md bg-action w-max text-primary hover:translate-x-2 hover:-translate-y-1 transition-all"
-          to="/"
+          to="/all-products"
         >
           View All Products
         </Link>

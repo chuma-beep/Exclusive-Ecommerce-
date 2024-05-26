@@ -1,9 +1,13 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import { cartproducts } from "../data/cart.json"
+//import { cartproducts } from "../data/cart.json"
 import {Link} from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../context/cart-context";
 
 export default function Cart() {
+  const { cartItems, addToCart, removeFromCart, removeItemFromCart, clearCart, getCartTotal } = useContext(CartContext);
+
    return(
       <>
       <Header />
@@ -23,25 +27,28 @@ export default function Cart() {
   </div>
 </div>
 
-{cartproducts.map((product, index) => {
+{cartItems.map((product) => {
+  const productSubTotal = product.price * product.quantity;
     return(
-      <div key={index}>
+      <>
+
+      <div>
       <div className="w-11/12  h-24 relative bg-white rounded shadow">
-      <div className="left-[387px] top-[39px] absolute text-black text-base font-normal leading-normal">{product.price}</div>
-      <div className="left-[1063px] top-[39px] absolute text-black text-base font-normal font-['Poppins'] leading-normal">{product.total}</div>
+      <div className="left-[387px] top-[39px] absolute text-black text-base font-normal leading-normal">&#8358; {product.price}</div>
+      <div className="left-[1063px] top-[39px] absolute text-black text-base font-normal font-['Poppins'] leading-normal">&#8358; {productSubTotal}</div>
       <div className="h-11 left-[710px] top-[29px] absolute  ">
       
       <div className="w-12 top-[6px] absolute justify-start items-center gap-4 inline-flex">
-<div class="py-2 px-3 inline-block bg-white border border-gray-200 rounded-lg" data-hs-input-number="">
-  <div class="flex items-center gap-x-1.5">
-    <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-input-number-decrement="">
-      <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<div className="py-2 px-3 inline-block bg-white border border-gray-200 rounded-lg" data-hs-input-number="">
+  <div className="flex items-center gap-x-1.5">
+    <button type="button" className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-input-number-decrement="" onClick={() => removeFromCart (product)}>
+      <svg className="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M5 12h14"></path>
       </svg>
     </button>
-    <input class="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0" type="text" value="0" data-hs-input-number-input=""/>
-    <button type="button" class="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-input-number-increment="">
-      <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <input className="p-0 w-6 bg-transparent border-0 text-gray-800 text-center focus:ring-0" type="text" value={product.quantity} data-hs-input-number-input="" />
+    <button type="button" className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-input-number-increment="" onClick={() =>  addToCart (product)}>
+      <svg className="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M5 12h14"></path>
         <path d="M12 5v14"></path>
       </svg>
@@ -54,19 +61,25 @@ export default function Cart() {
         <img className="w-12 h-10 left-[2px] top-[8px] absolute" src={product.img} alt={product.alt} />
       </div>
       <div className="left-[114px] top-[39px] absolute text-black text-base font-normal font-['Poppins'] leading-normal">{product.name}</div>
-      <div className="w-6 h-6 left-[30px] top-[20px] absolute">
-        <div className="w-4 h-4 left-[3px] top-[3px] absolute bg-red-500 rounded-full" />
-      </div>
+      <button className="w-6 h-6 left-[30px] top-[20px] absolute" onClick={() => (removeItemFromCart(product))}>
+        <span className="w-4 h-4 left-[3px] top-[3px] absolute bg-red-500 rounded-full" >
+        <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> 
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+        </span>
+      </button>
     </div>
     </div>
+    </>
 );
 })}
 <div className="w-11/12 h-14 mb-10 items-start flex flex-row justify-between">
   <div className="px-12 py-4 rounded border border-black/opacity-50 justify-center items-center gap-2.5 flex cursor-pointer hover:shadow-lg hover:shadow-gray-400">
-    <button className="text-black text-base font-medium leading-normal">Return To Shop</button>
+    <Link to="/all-products"><button className="text-black text-base font-medium leading-normal">Return to Shop</button></Link>
+    {/* <button className="text-black text-base font-medium leading-normal">Return To Shop</button> */}
   </div>
-  <div className="px-12 py-4 rounded border border-black/opacity-50 justify-center items-center gap-2.5 flex cursor-pointer hover:shadow-lg hover:shadow-gray-400">
-    <button className="text-black text-base font-medium leading-normal">Update Cart</button>
+  <div className="px-12 py-4 bg-red-500 rounded border border-black/opacity-50 justify-center items-center gap-2.5 flex cursor-pointer hover:shadow-lg hover:shadow-gray-400">
+    <button className="text-slate-100 text-base font-medium leading-normal" onClick={() => (clearCart())}>Clear Cart</button>
   </div>
 </div>
 <div className="w-96 h-80 justify-start items-start gap-44 inline-flex">
@@ -82,7 +95,7 @@ export default function Cart() {
     <div className="left-6 top-[32px] w-40  absolute text-black text-xl leading-7 font-normal">Cart Total</div>
     <div className="left-[24px] top-[84px] absolute justify-start items-start gap-64 inline-flex">
       <div className="text-black text-base font-normal leading-normal">Subtotal:</div>
-      <span className="text-black text-base font-normal leading-normal">$1750</span>
+      <span className="text-black text-base font-normal leading-normal">&#8358; {getCartTotal()}</span>
     </div>
     <div className="left-[24px] top-[140px] absolute justify-start items-start gap-64 inline-flex">
       <div className="text-black text-base font-normal leading-normal">Shipping:</div>
@@ -90,7 +103,7 @@ export default function Cart() {
     </div>
     <div className="left-[24px] top-[196px] absolute justify-start items-start gap-72 inline-flex">
       <div className="text-black text-base font-normal leading-normal">Total:</div>
-      <span className="text-black text-base font-normal leading-normal">$1750</span>
+      <span className="text-black text-base font-normal leading-normal">&#8358; {getCartTotal()}</span>
     </div>
     <div className="px-12 py-3 w-64 left-[89px] top-[236px] mt-10 absolute bg-red-500 rounded justify-center items-center gap-2.5 inline-flex cursor-pointer hover:shadow-lg hover:shadow-gray-400">
       <Link to="/checkout"><button className="text-neutral-50 text-base font-medium leading-normal">Proceed to checkout</button></Link>
@@ -106,7 +119,8 @@ export default function Cart() {
        </div>
 
        <Footer />
-     </>
+
+       </>
 
 
 

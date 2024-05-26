@@ -1,10 +1,37 @@
 import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
-import { exploreOurProducts } from "../data/exploreOurProducts.json";
+//import { exploreOurProducts } from "../data/exploreOurProducts.json";
 import { HiOutlineHeart, HiOutlineEye } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import StarRatings from "react-star-ratings";
+import {useState, useEffect, useContext } from "react";
+ import { CartContext } from "../context/cart-context";
 
 export default function ExploreOurProducts() {
+  const [products, setProducts] = useState([]);
+  const { addToCart } = useContext(CartContext);
+
+
+  async function getProducts() {
+    try {
+      const response = await fetch('../public/data/exploreOurProducts.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const text = await response.text();
+      console.log("Raw response text:", text); 
+      const data = JSON.parse(text);
+      setProducts(data.exploreOurProducts);  
+    } catch (error) {
+      console.error('Failed to fetch products:', error);
+    }
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+
+
   return (
     <section className="w-full px-28 my-20">
       <div className="flex items-center gap-3 mb-4">
@@ -23,9 +50,9 @@ export default function ExploreOurProducts() {
         </div>
       </div>
       <div className="flex w-full gap-6 flex-wrap justify-center">
-        {exploreOurProducts.map((product, index) => {
+        {products.map((product) => {
           return (
-            <div className="flex flex-col gap-1 w-[14rem]" key={index}>
+            <div className="flex flex-col gap-1 w-[14rem]" key={product.id}>
               <div className="group overflow-hidden flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
                 <img className="hover:scale-[1.2] transition-all" src={product.img} alt={product.alt} />
                 <span className="absolute w-max h-max px-2 rounded-md bg-green-cus left-3 top-2 text-sm text-primary">
@@ -39,7 +66,8 @@ export default function ExploreOurProducts() {
                     <HiOutlineEye className="w-full h-full" />
                   </button>
                 </div>
-                <button className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block">Add To Cart</button>
+                <button className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block" onClick={() => addToCart(product)}>
+                  Add To Cart</button>
               </div>
               <h3 className="text-md font-medium">{product.name}</h3>
               <div className="flex gap-2 items-center">
@@ -61,7 +89,7 @@ export default function ExploreOurProducts() {
       <div className="flex mt-8 items-center justify-center w-full">
         <Link
           className="px-4 py-2 rounded-md bg-action w-max text-primary hover:translate-x-2 hover:-translate-y-1 transition-all"
-          to="/"
+          to="/all-products"
         >
           View All Products
         </Link>
