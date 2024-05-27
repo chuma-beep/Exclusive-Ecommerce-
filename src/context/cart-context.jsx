@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []);
   const [modalState, setModalState] = useState({
     open: false,
-    vertical: 'top',
+    vertical: 'bottom',
     horizontal: 'right',
     messageType: 'add',
   });
@@ -27,8 +27,9 @@ export const CartProvider = ({ children }) => {
       );
     } else {
       setCartItems([...cartItems, { ...item, quantity: 1 }]);
-      setModalState({ ...modalState, open: true, messageType: 'add' });
+   
     }
+    setModalState({ ...modalState, open: true, messageType: 'add' });
   };
 
   const removeFromCart = (item) => {
@@ -45,6 +46,7 @@ export const CartProvider = ({ children }) => {
         )
       );
     }
+    setModalState({ ...modalState, open: true, messageType: 'delete' });
   };
 
   const removeItemFromCart = (item) => {
