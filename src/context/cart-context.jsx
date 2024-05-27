@@ -1,10 +1,10 @@
-// import { createContext, useState, useEffect } from 'react';
-// import { Snackbar, SnackbarContent } from '@mui/material';
-// import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-// import DeleteIcon from '@mui/icons-material/Delete';
-// import { green, red } from '@mui/material/colors';
+import { createContext, useState, useEffect } from 'react';
+import { Snackbar, SnackbarContent } from '@mui/material';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { green, red } from '@mui/material/colors';
 
-// export const CartContext = createContext();
+export const CartContext = createContext();
 
 // export const CartProvider = ({ children }) => {
 //   const [cartItems, setCartItems] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []);
