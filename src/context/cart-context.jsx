@@ -108,7 +108,9 @@ export const CartProvider = ({ children }) => {
       );
     }
   };
-
+ 
+   const cartItemsCount = cartItems.length
+    
   return (
     <CartContext.Provider
       value={{
@@ -116,6 +118,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         clearCart,
+        cartItemsCount,
         getCartTotal,
         removeItemFromCart,
         modalState,
