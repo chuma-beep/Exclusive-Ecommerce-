@@ -1,5 +1,4 @@
 
-import React, { useState, useEffect } from "react";
 import { Link, NavLink as RouterNavLink } from "react-router-dom";
 import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { Container, Typography, Grid } from "@mui/material";

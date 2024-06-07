@@ -3,7 +3,7 @@
         
          {
             "name": "HI Gamepad",
-            "price": 1960,
+            "price": 1100,
             "img": "/assets/Gamepad.png",
             "alt": "Hi Gamepad", 
             "className": "game",
