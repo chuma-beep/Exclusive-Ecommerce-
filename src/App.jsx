@@ -9,6 +9,9 @@ import SignUp from "./components/SignUp"
 import Login from "./components/Login"
 import ViewProduct from "./components/ViewProduct";
 import AllProducts from "./components/AllProducts"
+import Contact from "./components/Contact";
+import NotFound from "./components/NotFound";
+
 
 
 function App() {
@@ -17,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/my-account" element={<Account />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
@@ -25,7 +29,8 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/all-products" element={<AllProducts/>}/>
         <Route path="/product/:productID" element={<ViewProduct />} />
-        {/* <Route path="/*" element={<NotFound />} /> */}
+
+        { <Route path="/*" element={<NotFound />} /> }
       </Routes>
     </Router>
 

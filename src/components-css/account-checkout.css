@@ -78,6 +78,72 @@ input[type='password']{
 
 
 
+.checkout-details {
+  margin-bottom: 20px;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.checkout-summary {
+  margin-bottom: 20px;
+}
+
+.checkout-summary div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.checkout-payment {
+  margin-bottom: 20px;
+}
+
+.checkout-payment span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.checkout-payment label {
+  margin-right: 20px;
+}
+
+.checkout-coupon {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.checkout-coupon input {
+  width: 70%;
+  padding: 10px;
+}
+
+.checkout-coupon button {
+  width: 35%;
+  padding: 10px;
+  background-color: #DB4444;
+  color: white;
+  border-radius: 5px;
+}
+
+.checkout-button {
+  width: 30%;
+  padding: 15px;
+  background-color: #DB4444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
 
 
 /* form media queries */
@@ -182,6 +248,7 @@ margin: 0 200px 0 auto;
     display: flex;
     flex-direction: column;
     font-size: 10px;
+    width: 50%;
    }
    .item{
     display: flex;

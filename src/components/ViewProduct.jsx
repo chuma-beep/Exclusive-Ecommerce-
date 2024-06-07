@@ -1,13 +1,18 @@
+import { allProductsStore } from "../data/allProductsStore.json";
+import {relatedItems } from "../data/relatedItems.json";
 import Footer from "./Footer";
 import Header from "./Header";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { allProductsStore } from "../data/allProductsStore.json";
 import { useState, useEffect } from "react";
 import StarRatings from "react-star-ratings";
+import { HiOutlineHeart, HiOutlineEye } from "react-icons/hi";
+import "../components-css/viewproduct.css";
 
-export default function ViewProduct() {
-  const { productID } = useParams();
-  const [currentProduct, setCurrentProduct] = useState([]);
+function ViewProduct(){
+const {productID} = useParams();
+const [currentProduct, setCurrentProduct] = useState([]);
+const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     for (let product of allProductsStore) {
@@ -17,27 +22,133 @@ export default function ViewProduct() {
     }
   }, [setCurrentProduct, productID]);
 
-  return (
+  const increaseQuantity = ()=>{
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  }
+  const decreaseQuantity = ()=>{
+    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
+  }
+  return(
     <>
-      <Header />
-      <section className="w-full h-[70%] px-28 py-10 flex gap-6 justify-between">
-        <img src={currentProduct.img} alt={currentProduct.alt} />
+    <Header/>
+
+    
+    <div className="details-container">
+      <div className="img-container">
+      <img src={currentProduct.img} alt={currentProduct.alt} style={{width: '100%', maxWidth: '500px'}} />
+      </div>
+       
+
+    <div className="product-details-container" style={{padding: '2rem'}}>
+        <h1 style={{fontWeight: 'bold', fontSize: '20px'}}>{currentProduct.name}</h1>
         <div>
-          <h2>{currentProduct.name}</h2>
-          <p>{currentProduct.description}</p>
-          <p>${currentProduct.price}</p>
-          <div>
             <StarRatings
-              rating={currentProduct.stars}
-              starDimension="20px"
-              starSpacing="2px"
-              starRatedColor="orange"
+                rating={currentProduct.stars}
+                starDimension="20px"
+                starSpacing="2px"
+                 starRatedColor="orange"
             />
-            <span>({currentProduct["times rated"]})</span>
+            <span>({currentProduct.reviews} reviews)</span>
+        </div>
+        <h2 style={{fontSize: '20px'}}>${currentProduct.price}</h2>
+        <p style={{marginTop: '1rem'}}>{currentProduct.description}</p>
+        <hr style={{marginTop:'1rem'}}/>
+        <div className="quantity-action"style={{display: 'flex', gap: '2rem', marginTop: '2rem'}}>
+        <div className="product-quantity">
+     <button onClick={decreaseQuantity} style={{backgroundColor: '#DB4444'}} > -</button>
+     <span>{quantity}</span>
+     <button onClick={increaseQuantity} style={{backgroundColor: '#DB4444'}}> + </button>
+</div>
+<div className="product-actions">
+<button className="buy">Buy Now</button>
+<button style={{border: '1px solid #ccc', padding: '5px', borderRadius: '5px'}}>
+  <HiOutlineHeart className="w-full h-full"  />
+   </button>
+</div>
+        </div>
+        <div className="free-return" style={{border: '1px solid #ccc', borderRadius: '5px'}}>
+        <div style={{display: 'flex', gap: '1.5rem', margin: '1rem', alignItems: 'center'}}>
+          <div>
+          <img src="/icons/icon-delivery.png" />
+          </div>
+         
+          <div>
+          <h1 style={{padding: '5px', fontWeight: 'bold', fontSize: '16px'}}>Free Delivery</h1>
+          <p style={{padding: '5px', textDecoration: 'underline', fontSize: '12px', fontWeight: 'bold'}}>Enter your postal code for Delivery Availability</p>
           </div>
         </div>
-      </section>
-      <Footer />
+
+        <hr></hr>
+
+        <div style={{display: 'flex', gap: '1.5rem',margin: '1rem', alignItems: 'center' }}>
+          <div>
+          <img src="/icons/Icon-return.png" />
+          </div>
+        
+        <div>
+        <h1 style={{padding: '5px', fontWeight: 'bold', fontSize: '16px'}}>Return your delivery</h1>
+        <p style={{padding: '5px', fontSize: '12px', fontWeight: 'bold'}}>Free 30 days Delivery returns. <span style={{textDecoration: 'underline'}}>details</span></p>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+
+    <section className="related-items">
+      <div className="flex items-center gap-3 mb-4">
+        <span className="block w-[1.3rem] h-[3rem] rounded-md bg-accent"></span>
+        <h5 className="text-base text-action font-bold">Related Items</h5>
+      </div>
+      
+      <div className="flex w-full flex-wrap justify-center gap-6 overflow-x-hidden">
+        {relatedItems.map((product) => {
+          return (
+            <div className="flex flex-col gap-1 w-[14rem]" key={product.id}>
+              <div className="group overflow-hidden flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
+                <img
+                  className="hover:scale-[1.2] transition-all"
+                  src={product.img}
+                  alt={product.alt}
+                />
+                <div className="absolute top-2 right-3 flex flex-col gap-4">
+                  <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
+                    <HiOutlineHeart className="w-full h-full" />
+                  </button>
+                  <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
+                    <HiOutlineEye className="w-full h-full" />
+                  </button>
+                </div>
+                <button className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block" onClick={() => addToCart(product)}> 
+                  Add To Cart
+                </button>
+              </div>
+              <h3 className="text-md font-medium">{product.name}</h3>
+              <div className="flex gap-2 items-center">
+                <span className="text-action">{`$${product["discount-price"]}`}</span>
+                <span className="line-through">{`$${product.price}`}</span>
+              </div>
+              <div>
+                <StarRatings
+                  rating={product.stars}
+                  starDimension="20px"
+                  starSpacing="2px"
+                  starRatedColor="orange"
+                />
+                <span>({product["times rated"]})</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+<Footer/>
     </>
-  );
+  )
 }
+
+
+export default ViewProduct;
+
+
+
