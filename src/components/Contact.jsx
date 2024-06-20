@@ -1,5 +1,6 @@
 import React from "react";
-import AboutHeader from "./AboutHeader.jsx";
+// import AboutHeader from "./AboutHeader.jsx";
+import Header from "./Header";
 import "../components-css/contact.css"
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { Container } from "@mui/material";
@@ -9,7 +10,8 @@ import { CiMail } from "react-icons/ci";
 function Contact() {
   return (
     <>
-      <AboutHeader />
+      {/* <AboutHeader /> */}
+      <Header />
 
       <Container style={{margin: '1rem' }}>
         <RouterNavLink

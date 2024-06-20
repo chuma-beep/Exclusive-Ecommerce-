@@ -69,7 +69,7 @@ export default function SignUp() {
               </p>
               <Link
                 className="opacity-70 text-black text-base font-medium leading-normal underline underline-offset-8"
-                to="/Login"
+                to="/login"
               >
                 Log in
               </Link>

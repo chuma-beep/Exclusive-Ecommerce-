@@ -61,7 +61,7 @@ export default function FlashSales() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const text = await response.text();
-      console.log("Raw response text:", text); 
+      // console.log("Raw response text:", text); 
       const data = JSON.parse(text);
       setProducts(data.flashSalesProducts);  
     } catch (error) {
@@ -135,7 +135,7 @@ export default function FlashSales() {
                     <HiOutlineEye className="w-full h-full" />
                   </button>
                 </div>
-                <button className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block" onClick={() => addToCart(product)}>
+                <button className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden max-lg:block group-hover:block" onClick={() => addToCart(product)}>
                   Add To Cart
                 </button>
               </div>

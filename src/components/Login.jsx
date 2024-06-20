@@ -1,4 +1,4 @@
-// import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -52,6 +52,17 @@ export default function Login() {
               </div>
             </div>
           </form>
+          <div className="flex flex-row gap-4 justify-center mt-5">
+            <p className="opacity-70 mb-10  text-black text-base font-normal leading-normal">
+              Don't have an account?
+            </p>
+            <Link
+              className="opacity-70 text-black text-base font-medium leading-normal underline underline-offset-8"
+              to="/signup"
+            >
+              Sign Up
+            </Link>
+          </div>
         </div>
       </div>
       <Footer />

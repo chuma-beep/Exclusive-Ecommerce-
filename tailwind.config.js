@@ -25,6 +25,9 @@ export default {
       },
       outlineColor: {
         "active": "#DB4444",
+      },
+      fontFamily: {
+        primaryFontFamily: "Roboto, sans-serif",
       }
     },
   },

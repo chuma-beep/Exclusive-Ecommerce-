@@ -11,23 +11,23 @@ export default function NewArrivals() {
       <div className="flex w-full items-center gap-6 mb-8 justify-between">
         <h2 className="text-3xl font-bold">New Arrival</h2>
       </div>
-      <div className="flex w-full gap-6 justify-center">
-        <div className="w-1/2 bg-black p-6">
+      <div className="flex w-full gap-6 justify-center max-md:flex-wrap">
+        <div className="w-1/2 bg-black p-6 max-md:h-[20rem] max-md:w-full">
           {newArrivals.map((newArrival, index) => {
             return (
               index === 0 && (
                 <div
                   className="flex items-center justify-center  w-full h-full relative text-primary"
-                  key={crypto.randomUUID()}
+                  key={newArrival.id}
                 >
                   <img
                     className="h-full"
                     src={newArrival.src}
                     alt={newArrival.alt}
                   />
-                  <div className="absolute bottom-0 left-0 flex flex-col gap-2 w-1/2 max-md:w-full">
-                    <h3 className="text-2xl font-bold">{newArrival.product}</h3>
-                    <p className="text-base">{newArrival.description}</p>
+                  <div className="absolute bottom-0 left-0 flex flex-col gap-2 w-1/2 max-lg:w-full">
+                    <h3 className="text-2xl max-lg:text-xl font-bold">{newArrival.product}</h3>
+                    <p className="text-base ">{newArrival.description}</p>
                     <Link
                       className="text-base underline hover:text-action transition-all"
                       to={newArrival["shop link"]}
@@ -41,22 +41,22 @@ export default function NewArrivals() {
           })}
         </div>
 
-        <div className="flex flex-col gap-6 w-1/2">
-          <div className="w-full p-6 bg-black">
+        <div className="flex flex-col gap-6 w-full md:w-1/2 items-center">
+          <div className="w-full p-6 bg-black h-full max-md:h-[20rem] max-lg:h-max">
             {newArrivals.map((newArrival, index) => {
               return (
                 index === 1 && (
                   <div
-                    className="grid place-items-end w-full h-[20rem] relative text-primary"
-                    key={crypto.randomUUID()}
+                    className="grid place-items-end w-full h-full relative text-primary"
+                    key={newArrival.id}
                   >
                     <img
                       className="h-full"
                       src={newArrival.src}
                       alt={newArrival.alt}
                     />
-                    <div className="absolute bottom-0 left-0 flex flex-col gap-2 w-1/2 max-md:w-full">
-                      <h3 className="text-2xl font-bold">
+                    <div className="absolute bottom-0 left-0 flex flex-col gap-2 w-1/2 max-lg:w-full">
+                      <h3 className="text-2xl max-lg:text-xl font-bold">
                         {newArrival.product}
                       </h3>
                       <p className="text-base">{newArrival.description}</p>
@@ -72,14 +72,14 @@ export default function NewArrivals() {
               );
             })}
           </div>
-          <div className="flex w-full h-1/2 gap-6">
-            <div className="bg-black p-6 w-1/2 h-full">
-              {newArrivals.map((newArrival, index) => {
+          <div className="flex w-full items-center justify-center h-1/2 max-lg:h-max gap-6 max-lg:flex-wrap">
+          <div className="bg-black p-6 w-full h-full max-md:h-[20rem] max-lg:h-[14rem]">
+          {newArrivals.map((newArrival, index) => {
                 return (
                   index === 2 && (
                     <div
                       className="flex items-center justify-center  w-full h-full relative text-primary"
-                      key={crypto.randomUUID()}
+                      key={newArrival.id}
                     >
                       <img
                         className="h-full"
@@ -87,7 +87,7 @@ export default function NewArrivals() {
                         alt={newArrival.alt}
                       />
                       <div className="absolute bottom-0 left-0 flex flex-col gap-2 w-full max-md:w-full">
-                        <h3 className="text-2xl font-bold">
+                        <h3 className="text-2xl max-lg:text-xl font-bold">
                           {newArrival.product}
                         </h3>
                         <p className="text-base">{newArrival.description}</p>
@@ -103,13 +103,13 @@ export default function NewArrivals() {
                 );
               })}
             </div>
-            <div className="bg-black p-6 w-1/2 h-full">
+            <div className="bg-black p-6 w-full h-full max-md:h-[20rem] max-lg:h-[14rem]">
               {newArrivals.map((newArrival, index) => {
                 return (
                   index === 3 && (
                     <div
                       className="flex items-center justify-center w-full h-full relative p-6 text-primary"
-                      key={crypto.randomUUID()}
+                      key={newArrival.id}
                     >
                       <img
                         className="h-full"
@@ -117,7 +117,7 @@ export default function NewArrivals() {
                         alt={newArrival.alt}
                       />
                       <div className="absolute bottom-0 left-0 flex flex-col gap-2 w-full max-md:w-full">
-                        <h3 className="text-2xl font-bold">
+                        <h3 className="text-2xl max-lg:text-xl font-bold">
                           {newArrival.product}
                         </h3>
                         <p className="text-base">{newArrival.description}</p>
