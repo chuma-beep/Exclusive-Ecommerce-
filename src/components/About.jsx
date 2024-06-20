@@ -2,7 +2,8 @@
 import { Link, NavLink as RouterNavLink } from "react-router-dom";
 import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { Container, Typography, Grid } from "@mui/material";
-import AboutHeader from "./AboutHeader";
+// import AboutHeader from "./AboutHeader";
+import Header from "./Header";
 import Footer from "./Footer";
 import OurServices from "./OurServices";
 import teamMembersData from "../data/teamMembersData.json";
@@ -32,7 +33,9 @@ const ServiceCard = ({ icon, number, description }) => (
 function About() {
   return (
     <>
-      <AboutHeader />
+      {/* <AboutHeader /> */}
+      <Header />
+
       <Container style={{ marginTop: "50px", marginLeft: "87px" }}>
         <RouterNavLink to="/" style={{ color: "gray", textDecoration: "none", marginRight: "0.5rem" }}>
           Home

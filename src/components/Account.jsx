@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import { Container, Typography, Grid, Button } from "@mui/material";
 import "../components-css/account-checkout.css"
 import {NavLink as RouterNavLink, Link } from "react-router-dom";
-import AccountHeader from "./AccountHeader";
+// import AccountHeader from "./AccountHeader";
+import Header from "./Header";
 import Footer from "./Footer";
 
 
@@ -34,7 +35,8 @@ function Account(){
 
     return (
         <>
-          <AccountHeader />
+          {/* <AccountHeader /> */}
+          <Header />
     
           <Container>
 
