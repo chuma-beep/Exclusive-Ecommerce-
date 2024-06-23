@@ -44,8 +44,9 @@ started working on landing page.
 - Account Section
 - Checkout Section
 - I linked the cart section to the checkout section
-- I made my sections responsive(kinda responsive)
-
+- Built the Product details page, the contact page and the not found page.
+- All of my components have been made responsive.(kinda responsive)
+- Updated my checkout Component so it receives items from the cart.
 
 #### Steps to start working on this project
 

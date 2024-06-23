@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 export default function HeroCarousel({ data }) {
   const { heroCarouselData } = data;
-  const [slide, setSlide] = useState(0); 
+  const [slide, setSlide] = useState(0);
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -15,10 +15,10 @@ export default function HeroCarousel({ data }) {
     return () => {
       clearInterval(slideInterval);
     };
-  });
+  }, [heroCarouselData, slide]);
 
   return (
-    <div className="flex mt-10 w-full h-[18rem] overflow-hidden relative bg-black ">
+    <div className="flex mt-10 max-lg:mt-4 w-full h-[18rem] overflow-hidden relative bg-black ">
       {heroCarouselData.map((item, index) => {
         return (
           <div
@@ -36,9 +36,9 @@ export default function HeroCarousel({ data }) {
                     alt={item.logo}
                   />
                 )}
-                <h3 className="text-2xl">{item.product}</h3>
+                <h3 className="text-2xl max-lg:text-xl">{item.product}</h3>
               </div>
-              <h1 className="text-4xl font-bold w-full">{item.discount}</h1>
+              <h2 className="text-4xl max-lg:text-2xl font-bold w-full">{item.discount}</h2>
               <Link
                 className="flex items-center gap-3 hover:text-action hover:underline transition-all w-max"
                 to={item["quick-link"]}

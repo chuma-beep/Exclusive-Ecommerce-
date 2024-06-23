@@ -17,7 +17,7 @@ export default function AllProducts() {
 
   async function getProducts() {
     try {
-      const response = await fetch('../public/data/allProductsStore.json');
+      const response = await fetch('../data/allProductsStore.json');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

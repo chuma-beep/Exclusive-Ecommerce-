@@ -9,6 +9,7 @@
       "alt": "game pad",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 4.7,
+      "reviews": 100,
       "times rated": 88
     },
     {
@@ -20,6 +21,7 @@
       "alt": "keyboard",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 150,
       "times rated": 75
     },
     {
@@ -31,6 +33,7 @@
       "alt": "monitor",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 4.3,
+      "reviews": 130,
       "times rated": 99
     },
     {
@@ -42,6 +45,7 @@
       "alt": "chair",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 3.9,
+      "reviews": 140,
       "times rated": 99
     },
     {
@@ -53,6 +57,7 @@
       "alt": "jacket",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 100,
       "times rated": 55
     },
     {
@@ -64,6 +69,7 @@
       "alt": "laptop",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 90,
       "times rated": 325
     },
 
@@ -76,6 +82,7 @@
       "alt": "dog food",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 75,
       "times rated": 34
     },
     {
@@ -87,6 +94,7 @@
       "alt": "game pad",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 135,
       "times rated": 88
     },
     {
@@ -97,6 +105,7 @@
       "alt": "keyboard",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 4.5,
+      "reviews": 150,
       "times rated": 75
     },
     {
@@ -108,6 +117,7 @@
       "alt": "keyboard",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 110,
       "times rated": 75
     },
     {
@@ -118,6 +128,7 @@
       "alt": "monitor",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 130,
       "times rated": 99
     },
     {
@@ -128,6 +139,7 @@
       "alt": "chair",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 120,
       "times rated": 99
     },
     {
@@ -138,6 +150,7 @@
       "alt": "chair",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 130,
       "times rated": 99
     },
     {
@@ -148,6 +161,7 @@
       "alt": "jacket",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 110,
       "times rated": 55
     },
     {
@@ -159,6 +173,7 @@
       "alt": "game pad",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 80,
       "times rated": 88
     },
     {
@@ -170,6 +185,7 @@
       "alt": "game pad",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 3.5,
+      "reviews": 150,
       "times rated": 88
     },
     {
@@ -181,6 +197,7 @@
       "alt": "keyboard",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 150,
       "times rated": 75
     },
     {
@@ -191,6 +208,7 @@
       "alt": "laptop",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 130,
       "times rated": 325
     },
 
@@ -204,6 +222,7 @@
       "alt": "game pad",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 4.2,
+      "reviews": 150,
       "times rated": 88
     },
     {
@@ -216,6 +235,7 @@
       "alt": "keyboard",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 110,
       "times rated": 75
     },
     {
@@ -228,6 +248,7 @@
       "alt": "monitor",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 80,
       "times rated": 99
     },
     {
@@ -240,6 +261,7 @@
       "alt": "chair",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 3.9,
+      "reviews": 90,
       "times rated": 99
     },
     {
@@ -252,6 +274,7 @@
       "alt": "jacket",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews":90,
       "times rated": 55
     },
     {
@@ -264,6 +287,7 @@
       "alt": "laptop",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 110,
       "times rated": 325
     },
 
@@ -277,6 +301,7 @@
       "alt": "laptop",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 130,
       "times rated": 325
     },
     {
@@ -289,6 +314,7 @@
       "alt": "monitor",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 130,
       "times rated": 99
     },
     {
@@ -301,6 +327,7 @@
       "alt": "game pad",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 150,
       "times rated": 88
     },
     {
@@ -313,6 +340,7 @@
       "alt": "keyboard",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo laborum ducimus error? Quo non quam recusandae. Molestiae alias vel culpa ad dicta unde fugit commodi! Perferendis maxime repudiandae nemo.",
       "stars": 5,
+      "reviews": 150,
       "times rated": 75
     }
   ]
