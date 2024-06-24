@@ -4,6 +4,7 @@ import { CgClose } from "react-icons/cg";
 import { useRef, useState, useEffect, useContext } from "react";
 import { allProductsStore } from "../data/allProductsStore.json";
 import { CartContext } from "../context/cart-context";
+import { WishListContext } from "../context/wishlist-context";
 
 export default function Header() {
   const inputValueRef = useRef();
@@ -13,6 +14,9 @@ export default function Header() {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
   const [searchedProduct, setSearedProduct] = useState([]);
   const { cartItemsCount } = useContext(CartContext);
+  const { wishlistItemsCount } = useContext(WishListContext);
+
+
 
   const handleSearch = () => {
     const inputValue = inputValueRef.current.value;
@@ -118,24 +122,45 @@ export default function Header() {
       )}
 
       <div className="flex gap-8 items-center">
-        <Link
-          className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl hover:bg-secondary"
+        {/* <Link
+          // className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl hover:bg-secondary"
+
+          className="flex relative mb-4 items-center justify-center rounded-2xl hover:bg-secondary"
+
           to="/wishlist"
         >
-          <HiOutlineHeart className="w-full h-full p-1" />
-        </Link>
+          <HiOutlineHeart className="w-full h-full" />
+          <div className="absolute left-3">
+            <p className="flex h-2 w-2 mb-2 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">
+              {wishListItemsCount}
+            </p>
+          </div>
+        </Link> */}
+
+<Link
+      className="flex relative mb-4 items-center justify-center rounded-2xl hover:bg-secondary"
+      to="/wishlist"
+    >
+      <div className="absolute left-3">
+        <p className="flex h-2 w-2 mb-2 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">
+          {wishlistItemsCount}
+        </p>
+      </div>
+      <HiOutlineHeart  className="mt-4 h-6 w-6" /> {/* Replacing cart icon with a heart icon */}
+    </Link>
+
+
+
 
         <Link
           className="flex relative mb-4 items-center justify-center rounded-2xl hover:bg-secondary"
           to="/cart"
         >
-          {/* <div className="relative top-0"> */}
           <div className="absolute left-3">
             <p className="flex h-2 w-2 mb-2 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">
               {cartItemsCount}
             </p>
           </div>
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

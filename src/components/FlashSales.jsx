@@ -1,14 +1,15 @@
 import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
-//import { flashSalesProducts } from "../public/data/flashSalesProducts.json";
 import { HiOutlineHeart, HiOutlineEye } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import StarRatings from "react-star-ratings";
 import { CartContext } from "../context/cart-context";
+import { WishListContext } from "../context/wishlist-context";
 
 export default function FlashSales() {
   const [products, setProducts] = useState([]);
   const { addToCart } = useContext(CartContext);
+  const { addToWishList } = useContext(WishListContext);
 
   const [targetDate] = useState(() => {
     const initialDate = new Date();
@@ -113,8 +114,6 @@ export default function FlashSales() {
       <div className="flex w-full flex-wrap justify-center gap-6 overflow-x-hidden">
 
 
-
-
         {products.map((product) => {
           return (
             <div className="flex flex-col gap-1 w-[14rem]" key={product.id}>
@@ -128,7 +127,7 @@ export default function FlashSales() {
                   {product["discount-percentage"]}
                 </span>
                 <div className="absolute top-2 right-3 flex flex-col gap-4">
-                  <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
+                  <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]" onClick={() => addToWishList(product)}>
                     <HiOutlineHeart className="w-full h-full" />
                   </button>
                   <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">

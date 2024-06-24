@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { HiOutlineHeart, HiOutlineEye } from "react-icons/hi";
 import { CartContext } from "../context/cart-context";
+import { WishListContext } from "../context/wishlist-context";
 
 
 
@@ -12,7 +13,7 @@ import { CartContext } from "../context/cart-context";
 export default function AllProducts() {
   const [products, setProducts] = useState([]);
   const { addToCart } = useContext(CartContext);
-
+  const { addToWishList } = useContext(WishListContext);
 
 
   async function getProducts() {
@@ -22,7 +23,6 @@ export default function AllProducts() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const text = await response.text();
-      console.log("Raw response text:", text); 
       const data = JSON.parse(text);
       setProducts(data.allProductsStore);  
     } catch (error) {
@@ -54,7 +54,7 @@ export default function AllProducts() {
                   </span>
                 )}
                 <div className="absolute top-2 right-3 flex flex-col gap-4">
-                  <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
+                  <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]" onClick={() => addToWishList(product)}>
                     <HiOutlineHeart className="w-full h-full" />
                   </button>
                   <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
