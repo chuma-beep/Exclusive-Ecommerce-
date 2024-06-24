@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import {useState, useEffect, useContext } from "react";
  import { CartContext } from "../context/cart-context";
+ import { WishListContext } from "../context/wishlist-context";
 
 export default function ExploreOurProducts() {
   const [products, setProducts] = useState([]);
   const { addToCart } = useContext(CartContext);
-
+  const { addToWishList } = useContext(WishListContext);
 
   async function getProducts() {
     try {
@@ -59,7 +60,7 @@ export default function ExploreOurProducts() {
                   {product.new && product.new}
                 </span>
                 <div className="absolute top-2 right-3 flex flex-col gap-4">
-                  <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
+                  <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]"  onClick={() => addToWishList(product)}>
                     <HiOutlineHeart className="w-full h-full" />
                   </button>
                   <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">

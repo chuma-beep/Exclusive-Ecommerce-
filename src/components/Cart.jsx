@@ -12,19 +12,26 @@ export default function Cart() {
       <>
       <Header />
       <div className="flex flex-col align-middle pl-40 gap-10 mb-20">
-    <div className="w-24 h-5 justify-start items-center gap-3 inline-flex">
+    <div className="w-1/3 h-5 justify-start items-center gap-3 inline-flex">
   <Link className="opacity-50 text-black text-sm font-normal leading-tight" to="/">Home</Link>
   <Link className="text-black text-sm font-normal leading-tight">Cart</Link>
 </div>
        <div className="w-11/12 h-16 relative bg-white rounded shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
- 
-  <div className="left-[40px] top-[24px] absolute justify-start items-center gap-72 inline-flex">
-    
-    <div className="text-black text-base font-normal leading-normal">Product</div>
-    <div className="text-black text-base font-normal leading-normal">Price</div>
-    <div className="text-black text-base font-normal leading-normal">Quantity</div>
-    <div className="text-black text-base font-normal leading-normal">Subtotal</div>
-  </div>
+
+   
+<div class="flex">
+  <div className="flex-1 p-4 m-2 text-center">Product</div>
+  <div className="flex-1 p-4 m-2 text-center">Price</div>
+  <div className="flex-1 p-4 m-2 text-center">Quantity</div>
+  <div className="flex-1 p-4 m-2 text-center ">Subtotal</div>
+
+</div>
+
+
+
+
+
+
 </div>
 
 {cartItems.map((product) => {
@@ -33,13 +40,23 @@ export default function Cart() {
       <>
 
       <div>
-      <div className="w-11/12  h-24 relative bg-white rounded shadow">
-      <div className="left-[387px] top-[39px] absolute text-black text-base font-normal leading-normal">&#8358; {product.price}</div>
-      <div className="left-[1063px] top-[39px] absolute text-black text-base font-normal font-['Poppins'] leading-normal">&#8358; {productSubTotal}</div>
-      <div className="h-11 left-[710px] top-[29px] absolute  ">
+      <div className="flex flex-row h-24 relative bg-white rounded shadow"> 
+          <div className="w-14 h-14 left-[40px] top-[24px] absolute">
+        <img className="w-12 h-10 left-[2px] top-[8px] absolute" src={product.img} alt={product.alt} />
+      </div>
+      <div className="left-[114px] top-[39px] absolute text-black text-base font-normal font-['Poppins'] leading-normal">{product.name}</div>
+      <button className="w-6 h-6 left-[30px] top-[20px] absolute" onClick={() => (removeItemFromCart(product))}>
+        <span className="w-4 h-4 left-[3px] top-[3px] absolute bg-red-500 rounded-full" >
+        <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> 
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+        </span>
+      </button>
+      <div className="text-black text-base font-normal leading-normal flex-1 p-4 m-2 text-center">&#8358; {product.price}</div>
+      <div className="flex-1 text-center ">
       
-      <div className="w-12 top-[6px] absolute justify-start items-center gap-4 inline-flex">
-<div className="py-2 px-3 inline-block bg-white border border-gray-200 rounded-lg" data-hs-input-number="">
+      <div className=" w-12 top-[6px] justify-start items-center gap-4 inline-flex">
+<div className="py-2 px-3 inline-block rounded-lg" data-hs-input-number="">
   <div className="flex items-center gap-x-1.5">
     <button type="button" className="size-6 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" data-hs-input-number-decrement="" onClick={() => removeFromCart (product)}>
       <svg className="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -57,22 +74,16 @@ export default function Cart() {
 </div>
 </div>
       </div>
-      <div className="w-14 h-14 left-[40px] top-[24px] absolute">
-        <img className="w-12 h-10 left-[2px] top-[8px] absolute" src={product.img} alt={product.alt} />
-      </div>
-      <div className="left-[114px] top-[39px] absolute text-black text-base font-normal font-['Poppins'] leading-normal">{product.name}</div>
-      <button className="w-6 h-6 left-[30px] top-[20px] absolute" onClick={() => (removeItemFromCart(product))}>
-        <span className="w-4 h-4 left-[3px] top-[3px] absolute bg-red-500 rounded-full" >
-        <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"> 
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-        </span>
-      </button>
+
+      <div className="text-black text-base font-normal font-['Poppins'] leading-normal flex-1 ">&#8358; {productSubTotal}</div>
     </div>
     </div>
     </>
 );
 })}
+
+
+
 <div className="w-11/12 h-14 mb-10 items-start flex flex-row justify-between">
   <div className="px-12 py-4 rounded border border-black/opacity-50 justify-center items-center gap-2.5 flex cursor-pointer hover:shadow-lg hover:shadow-gray-400">
     <Link to="/all-products"><button className="text-black text-base font-medium leading-normal">Return to Shop</button></Link>
