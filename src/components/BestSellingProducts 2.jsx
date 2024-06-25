@@ -1,35 +1,9 @@
+import { bestSellingProducts } from "../data/bestSellingProducts.json";
 import { HiOutlineHeart, HiOutlineEye } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import StarRatings from "react-star-ratings"; 
-import { useState, useEffect, useContext } from "react";
-import { CartContext } from "../context/cart-context";
-import { WishListContext } from "../context/wishlist-context";
+import StarRatings from "react-star-ratings";
 
 export default function BestSellingProducts() {
- const [bestSellingProducts, setProducts] = useState([]);
-  const { addToCart } = useContext(CartContext);
-  const { addToWishList } = useContext(WishListContext) 
-
-
-  async function getProducts() {
-  try {
-    const response = await fetch('../data/bestSellingProducts.json');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const text = await response.text();
-    // console.log("Raw response text:", text); 
-    const data = JSON.parse(text);
-    setProducts(data.bestSellingProducts);  
-  }catch (error) {
-    console.error('Failed to fetch products:', error);
-  }
-  }
-  useEffect(() => {
-    getProducts();
-  }, []);
- 
-  
   return (
     <section className="w-full px-28 my-20">
       <div className="flex items-center gap-3 mb-4">
@@ -48,9 +22,9 @@ export default function BestSellingProducts() {
         </div>
       </div>
       <div className="flex w-full flex-wrap justify-center gap-6 overflow-x-hidden">
-        {bestSellingProducts.map((product) => {
+        {bestSellingProducts.map((product, index) => {
           return (
-            <div className="flex flex-col gap-1 w-[14rem]" key={product.id}>
+            <div className="flex flex-col gap-1 w-[14rem]" key={index}>
               <div className="group overflow-hidden flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
                 <img
                   className="hover:scale-[1.2] transition-all"
@@ -58,14 +32,14 @@ export default function BestSellingProducts() {
                   alt={product.alt}
                 />
                 <div className="absolute top-2 right-3 flex flex-col gap-4">
-                  <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]" onClick={() => addToWishList(product)} >
+                  <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
                     <HiOutlineHeart className="w-full h-full" />
                   </button>
                   <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
                     <HiOutlineEye className="w-full h-full" />
                   </button>
                 </div>
-                <button className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden max-lg:block group-hover:block" onClick={() => addToCart(product)}> 
+                <button className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block">
                   Add To Cart
                 </button>
               </div>
