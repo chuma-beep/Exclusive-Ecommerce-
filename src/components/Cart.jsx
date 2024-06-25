@@ -50,7 +50,7 @@ export default function Cart() {
 
               {/* Product Price */}
               <div className="text-black text-base font-medium flex-1 text-center md:pl-10  md:text-left">
-                &#8358; {product.price}
+                &#36; {product.price}
               </div>
 
               {/* Quantity Controls */}
@@ -82,7 +82,7 @@ export default function Cart() {
 
               {/* Product Subtotal */}
               <div className="text-black text-base font-medium flex-1 text-center md:text-center">
-                &#8358; {productSubTotal}
+                &#36; {productSubTotal}
               </div>
             </div>
           );
@@ -120,7 +120,7 @@ export default function Cart() {
             <div className="text-xl font-semibold mb-4">Cart Total</div>
             <div className="flex justify-between mb-4">
               <span>Subtotal:</span>
-              <span>&#8358; {getCartTotal()}</span>
+              <span>&#36; {getCartTotal()}</span>
             </div>
             <div className="flex justify-between mb-4">
               <span>Shipping:</span>
@@ -128,7 +128,7 @@ export default function Cart() {
             </div>
             <div className="flex justify-between font-semibold mb-6">
               <span>Total:</span>
-              <span>&#8358; {getCartTotal()}</span>
+              <span>&#36; {getCartTotal()}</span>
             </div>
             <Link to="/checkout" className="w-full">
               <button className="w-full px-6 py-3 bg-red-500 text-white rounded hover:shadow-lg">
