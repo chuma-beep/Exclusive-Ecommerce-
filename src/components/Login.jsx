@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
-
 import Header from "./Header";
 import Footer from "./Footer";
 import "../index.css";
+import { useAuthContext } from "../context/authContext";
 
 export default function Login() {
+  const { session, setSession } = useAuthContext();
+
+  console.log(session);
+
   return (
     <>
       <Header />
