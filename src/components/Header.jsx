@@ -122,21 +122,7 @@ export default function Header() {
       )}
 
       <div className="flex gap-8 items-center">
-        {/* <Link
-          // className="flex items-center justify-center w-[2rem] h-[2rem] rounded-2xl hover:bg-secondary"
-
-          className="flex relative mb-4 items-center justify-center rounded-2xl hover:bg-secondary"
-
-          to="/wishlist"
-        >
-          <HiOutlineHeart className="w-full h-full" />
-          <div className="absolute left-3">
-            <p className="flex h-2 w-2 mb-2 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">
-              {wishListItemsCount}
-            </p>
-          </div>
-        </Link> */}
-
+    
 <Link
       className="flex relative mb-4 items-center justify-center rounded-2xl hover:bg-secondary"
       to="/wishlist"
