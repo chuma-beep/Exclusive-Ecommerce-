@@ -5,13 +5,13 @@ import "../components-css/categories.css"
 
 export default function Categories() {
   return (
-    <section className="w-full px-28 my-20">
+    <section className="w-full px-[7%] my-20">
       <div className="flex items-center gap-3 mb-4">
         <span className="block w-[1.3rem] h-[3rem] rounded-md bg-accent"></span>
         <h5 className="text-base text-action font-bold">Categories</h5>
       </div>
       <div className="flex w-full items-center gap-6 mb-8 justify-between">
-        <h2 className="text-3xl font-bold">Browse By Category</h2>
+        <h2 className="text-3xl max-sm:text-xl font-bold">Browse By Category</h2>
         <div className="flex items-center gap-4">
           <button className="bg-secondary w-8 h-8 rounded-full transition-all hover:bg-action hover:text-primary flex items-center justify-center">
             <HiArrowLeft />

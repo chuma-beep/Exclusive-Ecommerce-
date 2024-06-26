@@ -29,6 +29,9 @@ started working on landing page.
 - count down timer
 - star rating
 - search products by name
+- overall responsiveness
+- loading skeleton
+- initiated authentication
 - footer
 
 ### Update: Member 2 (Wisdom)

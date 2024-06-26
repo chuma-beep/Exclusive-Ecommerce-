@@ -15,3 +15,14 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  .search-bar-sm {
+    width: 10.8rem;
+    font-size: 0.67rem;
+  }
+
+  .wc-wrapper-sm {
+    margin-right: 0.5rem;
+    gap: 1rem;
+  }
+}

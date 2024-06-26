@@ -59,8 +59,8 @@ export default function LandingPage() {
   return (
     <>
       <Header />
-      <section className="flex px-28 mb-6 gap-[7rem] w-full justify-between max-lg:flex-col max-lg:gap-4 max-lg:items-center">
-        <nav className="flex flex-col gap-3 text-sm w-[11rem] pr-2 pt-10 max-lg:pt-6 border-r-[1px] border-secondary max-lg:border-r-0 h-max max-lg:w-full max-lg:flex-row max-lg:flex-wrap max-lg:justify-center">
+      <section className="flex px-[7%] mb-6 gap-[7rem] w-full justify-between max-lg:flex-col max-lg:gap-4 max-lg:items-center">
+        <nav className="flex flex-col gap-3 text-sm w-[11rem] pr-2 max-lg:pr-0 pt-10 max-lg:pt-4 border-r-[1px] border-secondary max-lg:border-r-0 h-max max-lg:w-full max-lg:flex-row max-lg:flex-wrap max-lg:justify-center">
           <NavLink
             className="flex items-center pr-2 justify-between transition-all hover:text-action hover:underline"
             to="/"
@@ -121,7 +121,7 @@ export default function LandingPage() {
       <FlashSales />
       <Categories />
       <BestSellingProducts />
-      <section className="block w-full px-28 my-8">
+      <section className="block w-full px-[7%] my-8">
         <div className=" w-full max-lg:items-center justify-between bg-black text-primary p-8 items-start">
           <h2 className="text-[1.2rem] mb-6 text-green-cus">Categories</h2>
 
