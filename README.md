@@ -47,6 +47,8 @@ started working on landing page.
 - Built the Product details page, the contact page and the not found page.
 - All of my components have been made responsive.(kinda responsive)
 - Updated my checkout Component so it receives items from the cart.
+- Implemented User registration and authentication using Supabase, users can now sign in, sign in with Google and also log out.
+- 
 
 #### Steps to start working on this project
 

@@ -1,6 +1,6 @@
 import { CartContext } from '../context/cart-context';
 import { payment } from "../data/payment.json";
-import React, { useState, useContext } from "react";
+import  { useState, useContext } from "react";
 import CheckoutHeader from "./CheckoutHeader";
 import { Container, Typography } from "@mui/material";
 import { NavLink as RouterNavLink } from "react-router-dom";
