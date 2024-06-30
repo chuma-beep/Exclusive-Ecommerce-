@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import About from "./components/About";
 import Cart from "./components/Cart";
@@ -11,17 +11,22 @@ import ViewProduct from "./components/ViewProduct";
 import AllProducts from "./components/AllProducts"
 import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 
 function App() {
   return (
-    <Router>
+ 
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/my-account" element={<Account />} />
+        <Route path="/my-account" 
+        element=
+        {<ProtectedRoute>
+          <Account /> 
+          </ProtectedRoute>} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/checkout" element={<Checkout />} />
@@ -32,7 +37,7 @@ function App() {
 
         { <Route path="/*" element={<NotFound />} /> }
       </Routes>
-    </Router>
+   
 
   );
 }

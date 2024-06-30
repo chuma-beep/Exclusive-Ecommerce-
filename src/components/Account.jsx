@@ -1,18 +1,20 @@
-import React, {useState} from "react";
-import { Container, Typography, Grid, Button } from "@mui/material";
+import  {useState} from "react";
+import { Container, Typography,  } from "@mui/material";
 import "../components-css/account-checkout.css"
 import {NavLink as RouterNavLink, Link } from "react-router-dom";
 // import AccountHeader from "./AccountHeader";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useAuthContext } from "../context/authContext";
 
 
 
 function Account(){
+  const {session, handleLogout, loading, updateProfile} = useAuthContext();
     const [formData, setFormData] = useState({
-        firstName: "",
+        firstName: session?.user?.user_metadata?.first_name || "",
         lastName: "",
-        email: "",
+        email: session?.user?.email || "",
         address: "",
         newPassword: "",
         currentPassword: "",
@@ -26,11 +28,13 @@ function Account(){
         });
       };
 
-        // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Perform form submission logic here, such as sending data to a server 
-    console.log(formData);
+     if(!formData.firstName.trim()){
+      alert("First name is required")
+      return;
+     }
+     await updateProfile(formData)
   };
 
     return (
@@ -67,7 +71,7 @@ function Account(){
            </div>
 
             <div style={{}}>
-  <p>Welcome! <span style={{ color: '#DB4444',  border: 'none', fontSize: '14px', }}>Md Rimel</span></p>
+  <p>Welcome! <span style={{ color: '#DB4444',  border: 'none', fontSize: '14px', }}>{formData.firstName}</span></p>
 </div>
 </div>
          
@@ -195,6 +199,7 @@ function Account(){
         <div style={{ position: 'relative', top: '10px', left: '100px' }}>
         <button type="button" className="cancel-btn">Cancel</button>
         <button type="submit" className="save-btn">Save Changes</button> 
+        <button type="button" className="logout-btn" disabled={loading}onClick={handleLogout}> {loading ? "Logging Out..." : "Log Out"}</button>
         </div>
       </form>
     </div>

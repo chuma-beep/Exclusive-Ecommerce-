@@ -4,10 +4,12 @@ import Footer from "./Footer";
 import "../index.css";
 import { useAuthContext } from "../context/authContext";
 
-export default function Login() {
-  const { session, setSession } = useAuthContext();
 
-  console.log(session);
+export default function Login() {
+  const { handleLogin, error, loading, email, setEmail, password, setPassword } = useAuthContext();
+  
+  
+  
 
   return (
     <>
@@ -21,7 +23,7 @@ export default function Login() {
           />
         </div>
         <div>
-          <form className="pt-10">
+          <form onSubmit={handleLogin}className="pt-10">
             <h1 className="text-black text-4xl font-medium leading-[50px] tracking-wider mb-6">
               Log in to Exclusive
             </h1>
@@ -37,17 +39,26 @@ export default function Login() {
                 placeholder="Enter email or Phone number"
                 required
                 className="border-b-2 border-black p-2 focus:outline-none"
+                value= {email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <input
                 type="text"
                 placeholder="Password"
                 className="border-b-2  border-black p-2 focus:outline-none"
                 required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <div>
                 <div className="flex flex-row justify-center gap-20">
                   <div className="w-10 h-12 px-14 py-2 mt-10 bg-red-500 rounded justify-center items-center gap-36 flex flex-row transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
-                    <button className="text-neutral-50">Login</button>
+                    <button className="text-neutral-50"
+                    type="submit"
+                    disabled={loading}>
+                    {loading ? "Logging In" : "Log In"}
+                    </button>
+                    {error && <p>{error}</p>}
                   </div>
                   <div className="mt-12">
                     <a className="text-red-500">Forget Password</a>

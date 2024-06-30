@@ -53,7 +53,8 @@ input[type='password']{
 }
 
 .cancel-btn,
-.save-btn{
+.save-btn,
+.logout-btn{
   width: 214px;
   height: 56px;
   border: 1px solid #ccc;
@@ -63,7 +64,8 @@ input[type='password']{
   
  
 }
-.save-btn{
+.save-btn,
+.logout-btn{
   background-color: #DB4444;
   color: #fff;
   border-radius: 5px;
@@ -191,7 +193,8 @@ input[type = 'text']{
 }
 
 .cancel-btn,
-.save-btn{
+.save-btn,
+.logout-btn{
 width: 120px;
 margin: 0 200px 0 auto;
 }
