@@ -30,15 +30,15 @@ export default function Login() {
     <>
       <Header />
       <div className="flex flex-row mt-20 mb-20 gap-20 justify-center">
-        <div className="hidden sm:block max-h-max">
+        <div className="hidden sm:block max-w-full h-auto">
           <img
-            className="h-108"
+            className="hidden sm:block h-full"
             src="signup-img/singup-img(2).png"
             alt="Login illustration"
           />
         </div>
-        <div>
-          <form onSubmit={handleLogin} className="pt-10">
+        <div className="sm:w-11/12 lg:w-1/5">
+          <form onSubmit={handleLogin} className="pt-10 sm:w-11/12 ">
             <h1 className="text-black text-4xl font-medium leading-[50px] tracking-wider mb-6">
               Log in to Exclusive
             </h1>
@@ -57,15 +57,16 @@ export default function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <div className="relative">
+              <div className="relative w-full">
                 <input
                   type={passwordVisible ? "text" : "password"}
                   placeholder="Password"
-                  className="border-b-2 border-black p-2 focus:outline-none w-full"
+                  id="passWordBox"
+                  className="border-b-2 border-black p-2 focus:outline-none"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  minLength={8} // Optional: Enforce minimum length for security
+                  minLength={8} 
                 />
                 <span
                   className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
@@ -83,8 +84,8 @@ export default function Login() {
                   {loading ? "Logging In..." : "Log In"}
                 </button>
                 {error && <p className="text-red-500 mt-10">{error}</p>}
-                <div className="mt-12">
-                  <a href="#" className="text-red-500">Forget Password</a>
+                <div className="mt-10">
+                  <a href="#" className="text-red-500">Forgot Password?</a>
                 </div>
               </div>
             </div>

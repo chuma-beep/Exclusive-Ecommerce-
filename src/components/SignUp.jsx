@@ -3,7 +3,12 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import "../index.css";
+import "../App.css";
 import { Link } from "react-router-dom";
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
+import { useState } from "react";
 import { useAuthContext } from "../context/authContext";
 
 
@@ -21,6 +26,14 @@ export default function SignUp(){
          loading
         } = useAuthContext();
  
+
+const [passwordVisible, setPasswordVisible] = useState(false);
+
+
+const handleTogglePasswordVisibility = () =>{
+  setPasswordVisible(!passwordVisible);
+};
+
   
   return (
     <>
@@ -28,8 +41,7 @@ export default function SignUp(){
       <div className="flex flex-row mt-20 mb-20 gap-20 justify-center">
         <div className="flex max-h-max">
           <img
-            className="h-108"
-            src="signup-img/singup-img(2).png"
+            className="hidden sm:block h-full"            src="signup-img/singup-img(2).png"
             alt="image description"
           />
         </div>
@@ -45,6 +57,7 @@ export default function SignUp(){
               <input
                 type="text"
                 placeholder="First Name"
+                id="emailOrNumber" //used the sam id to write less css code
                 className="border-b-2 border-black p-2 focus:outline-none"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
@@ -62,15 +75,24 @@ export default function SignUp(){
                 onChange={(e) => setEmail(e.target.value)}
                
               />
+              <div className="relative w-full">
               <input
-                type="text"
+                type={passwordVisible ? "text": "password"}
                 placeholder="Password"
+                id="passWordBox"
                 className="border-b-2  border-black p-2 focus:outline-none"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                
               />
+               <span
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                  onClick={handleTogglePasswordVisibility}
+                >
+                  <Icon icon={passwordVisible ? eye : eyeOff} size={20} />
+                </span>
+                </div>
             </div>
             <div className="w-96 h-14 px-32 py-4 mt-10 bg-red-500 rounded justify-center items-center gap-2.5 inline-flex transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
               <button className="text-neutral-50"
