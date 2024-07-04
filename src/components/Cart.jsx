@@ -29,7 +29,7 @@ export default function Cart() {
         {cartItems.map((product) => {
           const productSubTotal = product.price * product.quantity;
           return (
-            <div key={product.id} className="w-11/12 flex flex-col md:flex-row items-center bg-white rounded shadow mb-4 p-4 gap-8 ">
+            <div key={product.id} className="w-11/12 flex flex-col md:flex-row items-center bg-white rounded shadow mb-4 p-4 gap-8 transition-shadow sm:transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
               {/* Product Image with Close Button */}
               <div className="relative w-20 h-20 flex-shrink-0 md:ml-22">
                 <img className="w-full h-full object-cover rounded" src={product.img} alt={product.alt} />
