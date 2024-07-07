@@ -3,9 +3,12 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "../index.css";
 import "../App.css";
+import { FcGoogle } from "react-icons/fc";
+
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
+
 import { useState } from "react";
 import { useAuthContext } from "../context/authContext";
 
@@ -18,6 +21,7 @@ export default function Login() {
     setEmail,
     password,
     setPassword,
+    handleGoogleSignin,
   } = useAuthContext();
 
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -78,16 +82,30 @@ export default function Login() {
               <div className="flex flex-row justify-center gap-20">
                 <button
                   type="submit"
-                  className="w-40 h-12 mt-10 bg-red-500 rounded text-neutral-50 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400"
+                  className="w-full h-12 mt-10 bg-red-500 rounded text-neutral-50 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400"
                   disabled={loading}
                 >
                   {loading ? "Logging In..." : "Log In"}
                 </button>
                 {error && <p className="text-red-500 mt-10">{error}</p>}
-                <div className="mt-10">
+                </div>
+                <div className="flex flex-col py-10">
+                        <div className="w-full h-12 bg-white border border-black rounded-md flex items-center justify-center transition-shadow duration-300 cursor-pointer hover:bg-red-lg hover:bg-red">
+                            <button
+                                className="flex items-center justify-center gap-4"
+                                type="button"
+                                onClick={handleGoogleSignin}
+                            >
+                               <FcGoogle size="20" />
+                                <span className="text-black">Log in with Google</span>
+                            </button>
+                        </div>
+                    </div>
+                <div className="mt-2">
                   <a href="#" className="text-red-500">Forgot Password?</a>
                 </div>
-              </div>
+             
+              
             </div>
             <div className="flex flex-row gap-4 justify-center mt-5">
               <p className="opacity-70 mb-10 text-black text-base font-normal leading-normal">

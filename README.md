@@ -48,7 +48,7 @@ started working on landing page.
 - All of my components have been made responsive.(kinda responsive)
 - Updated my checkout Component so it receives items from the cart.
 - Implemented User registration and authentication using Supabase, users can now sign in, sign in with Google and also log out.
-- 
+- Implemented Log in with Google: Users can log in using their Google account without needing to remember another password.
 
 #### Steps to start working on this project
 
