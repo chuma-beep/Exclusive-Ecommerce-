@@ -81,9 +81,12 @@ export default function ExploreOurProducts() {
                       >
                         <HiOutlineHeart className="w-full h-full" />
                       </button>
-                      <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
+                      <Link
+                        to={`/product/${product.id}`}
+                        className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]"
+                      >
                         <HiOutlineEye className="w-full h-full" />
-                      </button>
+                      </Link>
                     </div>
                     <button
                       className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden max-lg:block group-hover:block"

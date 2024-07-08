@@ -81,7 +81,7 @@ export default function FlashSales() {
   }, []);
 
   return (
-    <section className="w-full px-[7%] my-14">
+    <section className="w-full px-[7%] my-14 max-sm:mt-8">
       <div className="flex items-center gap-3 mb-4">
         <span className="block w-[1.3rem] h-[3rem] rounded-md bg-accent"></span>
         <h5 className="text-base text-action font-bold">Today’s</h5>
@@ -149,9 +149,12 @@ export default function FlashSales() {
                     >
                       <HiOutlineHeart className="w-full h-full" />
                     </button>
-                    <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
+                    <Link
+                      to={`/product/${product.id}`}
+                      className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]"
+                    >
                       <HiOutlineEye className="w-full h-full" />
-                    </button>
+                    </Link>
                   </div>
                   <button
                     className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden max-lg:block group-hover:block"

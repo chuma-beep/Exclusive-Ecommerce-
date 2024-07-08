@@ -6,6 +6,7 @@ import { HiOutlineHeart, HiOutlineEye } from "react-icons/hi";
 import { CartContext } from "../context/cart-context";
 import { WishListContext } from "../context/wishlist-context";
 import { ItemSkeleton2 } from "../skeletons/ItemSkeleton";
+import { Link } from "react-router-dom";
 
 export default function AllProducts() {
   const [loading, setLoading] = useState(true);
@@ -70,9 +71,12 @@ export default function AllProducts() {
                       >
                         <HiOutlineHeart className="w-full h-full" />
                       </button>
-                      <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
+                      <Link
+                        to={`/product/${product.id}`}
+                        className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]"
+                      >
                         <HiOutlineEye className="w-full h-full" />
-                      </button>
+                      </Link>
                     </div>
                     <button
                       className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block"

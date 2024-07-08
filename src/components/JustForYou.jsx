@@ -45,9 +45,12 @@ export default function JustForYou() {
                     {product["discount-percentage"]}
                   </span>
                   <div className="absolute top-2 right-3 flex flex-col gap-4">
-                    <button className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]">
+                    <Link
+                      to={`/product/${product.id}`}
+                      className="bg-white w-6 h-6 rounded-full flex items-center justify-center p-[1px]"
+                    >
                       <IoEyeOutline className="w-full h-full" />
-                    </button>
+                    </Link>
                   </div>
                   <button
                     className="w-full h-[2rem] absolute bottom-0 bg-black text-primary block max-lg:block group-hover:block"

@@ -1,7 +1,6 @@
 import { Link, NavLink as RouterNavLink } from "react-router-dom";
 import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { Container, Typography, Grid } from "@mui/material";
-// import AboutHeader from "./AboutHeader";
 import Header from "./Header";
 import Footer from "./Footer";
 import OurServices from "./OurServices";
@@ -44,7 +43,6 @@ const ServiceCard = ({ icon, number, description }) => (
 function About() {
   return (
     <>
-      {/* <AboutHeader /> */}
       <Header />
 
       <Container

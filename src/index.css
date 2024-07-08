@@ -20,7 +20,9 @@
     width: 10.8rem;
     font-size: 0.67rem;
   }
+}
 
+@media screen and (max-width: 640px) {
   .wc-wrapper-sm {
     margin-right: 0.5rem;
     gap: 1rem;

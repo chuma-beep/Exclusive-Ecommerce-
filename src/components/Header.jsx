@@ -5,8 +5,11 @@ import { useRef, useState, useEffect, useContext } from "react";
 import { allProductsStore } from "../data/allProductsStore.json";
 import { CartContext } from "../context/cart-context";
 import { WishListContext } from "../context/wishlist-context";
+import { useAuthContext } from "../context/authContext";
+import { CiUser } from "react-icons/ci";
 
 export default function Header() {
+  const { isLoggedIn, session } = useAuthContext();
   const inputValueRef = useRef();
   const menuBtnRef = useRef();
   const [searchQuery, setSearchQuery] = useState("");
@@ -15,11 +18,20 @@ export default function Header() {
   const [searchedProduct, setSearedProduct] = useState([]);
   const { cartItemsCount } = useContext(CartContext);
   const { wishlistItemsCount } = useContext(WishListContext);
+  const [userAvatar, setUserAvatar] = useState("");
 
   const handleSearch = () => {
     const inputValue = inputValueRef.current.value;
     setSearchQuery(inputValue);
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setUserAvatar(session.user.user_metadata.avatar_url);
+    } else {
+      setUserAvatar("");
+    }
+  }, [isLoggedIn, session, userAvatar]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -64,20 +76,23 @@ export default function Header() {
           Exclusive
         </Link>
         <button
-            ref={menuBtnRef}
-            className="lg:hidden "
-            type="button"
-            onClick={handleDropDown}
-          >
-            {dropDown ? (
-              <CgClose className="w-10 h-10" />
-            ) : (
-              <HiOutlineMenu className="w-10 h-10" />
-            )}
-          </button>
+          ref={menuBtnRef}
+          className="lg:hidden "
+          type="button"
+          onClick={handleDropDown}
+        >
+          {dropDown ? (
+            <CgClose className="w-10 h-10" />
+          ) : (
+            <HiOutlineMenu className="w-10 h-10" />
+          )}
+        </button>
       </div>
       <div className="flex w-full justify-between gap-4 lg:gap-[3rem] items-center">
-        <Link className="text-[2rem] max-sm:hidden font-bold max-md:text-[1.5rem]" to="/">
+        <Link
+          className="text-[2rem] max-sm:hidden font-bold max-md:text-[1.5rem]"
+          to="/"
+        >
           Exclusive
         </Link>
         <nav
@@ -85,7 +100,7 @@ export default function Header() {
             isLargeScreen
               ? ""
               : dropDown
-              ? "max-lg:absolute max-lg:p-10 max-lg:flex-col max-lg:w-max max-lg:h-max max-lg:bg-secondary max-lg:z-20 max-lg:top-[6rem] max-sm:top-[7rem] max-lg:right-0 max-lg:mr-[10%]"
+              ? "max-lg:absolute max-lg:p-10 max-lg:flex-col max-lg:w-max max-lg:h-max max-lg:bg-secondary max-lg:z-20 max-lg:top-[6rem] max-sm:top-[7rem] max-lg:right-0 max-lg:mr-[7%]"
               : "hidden"
           }`}
         >
@@ -104,12 +119,14 @@ export default function Header() {
           >
             About
           </NavLink>
-          <NavLink
-            className="px-2 py-1 hover:underline font-medium"
-            to="/login"
-          >
-            Login
-          </NavLink>
+          {!isLoggedIn && (
+            <NavLink
+              className="px-2 py-1 hover:underline font-medium"
+              to="/login"
+            >
+              Login
+            </NavLink>
+          )}
         </nav>
         <div className="flex items-center relative">
           <input
@@ -143,7 +160,7 @@ export default function Header() {
         )}
         <div className="flex gap-8 items-center wc-wrapper-sm">
           <Link
-            className="flex relative items-center justify-center rounded-2xl hover:bg-secondary"
+            className="flex relative items-center justify-center rounded-2xl hover:bg-action hover:text-white transition-all"
             to="/wishlist"
           >
             <p className="flex absolute left-3 -top-2 h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">
@@ -152,7 +169,7 @@ export default function Header() {
             <HiOutlineHeart className="h-6 w-6" />
           </Link>
           <Link
-            className="flex relative items-center justify-center rounded-2xl hover:bg-secondary"
+            className="flex relative items-center justify-center rounded-2xl hover:bg-action hover:text-white transition-all"
             to="/cart"
           >
             <p className="flex absolute left-3 -top-2 h-2 w-2 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">
@@ -173,6 +190,29 @@ export default function Header() {
               />
             </svg>
           </Link>
+          {isLoggedIn && (
+            <Link
+              className="flex items-center justify-center rounded-2xl font-bold hover:bg-action transition-all"
+              to="/my-account"
+            >
+              {userAvatar ? (
+                <img
+                  src={userAvatar}
+                  alt="user profile picture"
+                  className="w-[1.7rem] h-[1.7rem] p-1 rounded-full"
+                />
+              ) : (
+                <CiUser
+                  className="w-[1.6rem] h-[1.6rem] p-1"
+                  style={{
+                    background: "#DB4444",
+                    borderRadius: "50%",
+                    color: "white",
+                  }}
+                />
+              )}
+            </Link>
+          )}
         </div>
         <button
           ref={menuBtnRef}
