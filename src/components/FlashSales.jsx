@@ -132,8 +132,8 @@ export default function FlashSales() {
               <ItemSkeleton key={index} />
             ))
           : products.map((product) => (
-              <div className="flex flex-col gap-1 w-[14rem]" key={product.id}>
-                <div className="group flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative transition-all overflow-hidden">
+              <div className="flex flex-col gap-1 w-[14rem] max-sm:w-[9rem]" key={product.id}>
+                <div className="group flex flex-col items-center justify-center w-full h-[13rem] max-sm:h-[10rem] rounded-md p-4 bg-secondary relative transition-all overflow-hidden">
                   <img
                     className="hover:scale-[1.2] transition-all"
                     src={product.img}

@@ -24,7 +24,7 @@ export default function Categories() {
       <div className="flex w-full flex-wrap justify-center gap-6 overflow-x-hidden border-b-[3px] border-secondary pb-16">
         {categories.map((category, index) => {
           return (
-            <Link className="flex flex-col gap-1 w-[14rem] h-[10rem] border-[3px] border-secondary rounded-lg p-4 items-center justify-center hover:bg-action transition-all hover:text-primary" id="category-p" to="/" key={index}>
+            <Link className="flex flex-col gap-1 w-[14rem] h-[10rem] max-sm:w-[9rem] max-sm:h-[8rem] border-[3px] border-secondary rounded-lg p-4 items-center justify-center hover:bg-action transition-all hover:text-primary" id="category-p" to="/" key={index}>
                 <img className="category-icon" src={category.icon} alt={category.alt} />
                 <h3>{category.title}</h3>
             </Link>

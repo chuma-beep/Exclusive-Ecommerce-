@@ -64,8 +64,8 @@ export default function ExploreOurProducts() {
             ))
           : products.map((product) => {
               return (
-                <div className="flex flex-col gap-1 w-[14rem]" key={product.id}>
-                  <div className="group overflow-hidden flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
+                <div className="flex flex-col gap-1 w-[14rem] max-sm:w-[9rem]" key={product.id}>
+                  <div className="group overflow-hidden flex flex-col items-center justify-center w-full h-[13rem] max-sm:h-[10rem] rounded-md p-4 bg-secondary relative ">
                     <img
                       className="hover:scale-[1.2] transition-all"
                       src={product.img}
@@ -96,7 +96,7 @@ export default function ExploreOurProducts() {
                     </button>
                   </div>
                   <h3 className="text-md font-medium">{product.name}</h3>
-                  <div className="flex gap-2 items-center">
+                  <div className="flex gap-2 items-center max-sm:items-start max-sm:flex-col">
                     <span className="text-action">{`$${product.price}`}</span>
                     <div>
                       <StarRatings
