@@ -3,13 +3,13 @@ import { newArrivals } from "../data/newArrivals.json";
 
 export default function NewArrivals() {
   return (
-    <section className="w-full px-28 my-20">
+    <section className="w-full px-[7%] my-20">
       <div className="flex items-center gap-3 mb-4">
         <span className="block w-[1.3rem] h-[3rem] rounded-md bg-accent"></span>
         <h5 className="text-base text-action font-bold">Featured</h5>
       </div>
       <div className="flex w-full items-center gap-6 mb-8 justify-between">
-        <h2 className="text-3xl font-bold">New Arrival</h2>
+        <h2 className="text-3xl max-sm:text-xl font-bold">New Arrival</h2>
       </div>
       <div className="flex w-full gap-6 justify-center max-md:flex-wrap">
         <div className="w-1/2 bg-black p-6 max-md:h-[20rem] max-md:w-full">

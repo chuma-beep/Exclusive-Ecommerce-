@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -11,8 +11,7 @@ const TeamCarousel = ({ data }) => {
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      slide === teamMembers.length  - 1 ? setSlide(0) : setSlide(slide + 1);
-      
+      slide === Math.ceil(teamMembers.length / 4) - 1 ? setSlide(0) : setSlide(slide + 1);
     }, 10000);
 
     return () => {
@@ -61,29 +60,21 @@ const TeamCarousel = ({ data }) => {
             </Grid>
           </div>
         ))}
-        <span className="absolute bottom-2 flex gap-3 w-full justify-center" style={{marginBottom: '-50px'}}>
-
-          {teamMembers.map((_, index) => {
-            return (
-              <button
-                className={
-                  slide === index
-                   ? "bg-action rounded-full w-2 h-2"
-                    : "bg-secondary rounded-full w-2 h-2"
-                }
-                key={index}
-                onClick={() => setSlide(index)}
-                style={{
-                  backgroundColor: slide === index ? '#DB4444' : '#333333',
-          borderRadius: '50%',
-          width: '8px',
-          height: '8px',
-                }}
-
-              ></button>
-            );
-          })}
-          </span>
+       <span className="absolute bottom-2 flex gap-3 w-full justify-center" style={{ marginBottom: '-50px' }}>
+          {Array.from({ length: Math.ceil(teamMembers.length / 4) }).map((_, pageIndex) => (
+            <button
+              className={slide === pageIndex ? "bg-action rounded-full w-2 h-2" : "bg-secondary rounded-full w-2 h-2"}
+              key={pageIndex}
+              onClick={() => setSlide(pageIndex)}
+              style={{
+                backgroundColor: slide === pageIndex ? '#DB4444' : '#333333',
+                borderRadius: '50%',
+                width: '8px',
+                height: '8px',
+              }}
+            ></button>
+          ))}
+        </span>
       </div>
     </Container>
   );

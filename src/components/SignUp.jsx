@@ -5,48 +5,45 @@ import Footer from "./Footer";
 import "../index.css";
 import "../App.css";
 import { Link } from "react-router-dom";
-import { Icon } from 'react-icons-kit';
-import { eyeOff } from 'react-icons-kit/feather/eyeOff';
-import { eye } from 'react-icons-kit/feather/eye';
+import { Icon } from "react-icons-kit";
+import { eyeOff } from "react-icons-kit/feather/eyeOff";
+import { eye } from "react-icons-kit/feather/eye";
 import { useState } from "react";
 import { useAuthContext } from "../context/authContext";
 
+export default function SignUp() {
+  const {
+    handleSignup,
+    handleGoogleSignin,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    firstName,
+    setFirstName,
+    error,
+    loading,
+  } = useAuthContext();
 
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
-export default function SignUp(){
-  const {handleSignup, 
-         handleGoogleSignin,
-         email, 
-         setEmail, 
-         password, 
-         setPassword, 
-         firstName, 
-         setFirstName, 
-         error, 
-         loading
-        } = useAuthContext();
- 
+  const handleTogglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
 
-const [passwordVisible, setPasswordVisible] = useState(false);
-
-
-const handleTogglePasswordVisibility = () =>{
-  setPasswordVisible(!passwordVisible);
-};
-
-  
   return (
     <>
       <Header />
       <div className="flex flex-row mt-20 mb-20 gap-20 justify-center">
         <div className="flex max-h-max">
           <img
-            className="hidden sm:block h-full"            src="signup-img/singup-img(2).png"
+            className="hidden sm:block h-full"
+            src="signup-img/singup-img(2).png"
             alt="image description"
           />
         </div>
         <div>
-          <form onSubmit={handleSignup}className="">
+          <form onSubmit={handleSignup} className="">
             <h1 className="text-black text-4xl font-medium leading-[50px] tracking-wider">
               Create an account
             </h1>
@@ -57,7 +54,7 @@ const handleTogglePasswordVisibility = () =>{
               <input
                 type="text"
                 placeholder="First Name"
-                id="emailOrNumber" //used the sam id to write less css code
+                id="firstName"
                 className="border-b-2 border-black p-2 focus:outline-none"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
@@ -73,48 +70,45 @@ const handleTogglePasswordVisibility = () =>{
                 className="border-b-2 border-black p-2 focus:outline-none"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-               
               />
               <div className="relative w-full">
-              <input
-                type={passwordVisible ? "text": "password"}
-                placeholder="Password"
-                id="passWordBox"
-                className="border-b-2  border-black p-2 focus:outline-none"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-               
-              />
-               <span
+                <input
+                  type={passwordVisible ? "text" : "password"}
+                  placeholder="Password"
+                  id="passWordBox"
+                  className="border-b-2  border-black p-2 focus:outline-none"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <span
                   className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer"
                   onClick={handleTogglePasswordVisibility}
                 >
                   <Icon icon={passwordVisible ? eye : eyeOff} size={20} />
                 </span>
-                </div>
+              </div>
             </div>
             <div className="w-96 h-14 px-32 py-4 mt-10 bg-red-500 rounded justify-center items-center gap-2.5 inline-flex transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
-              <button className="text-neutral-50"
-              type="submit"
-              disabled={loading}>
-              {loading ? "Signing up..." : "Create Account"}
+              <button
+                className="text-neutral-50"
+                type="submit"
+                disabled={loading}
+              >
+                {loading ? "Signing up..." : "Create Account"}
               </button>
-              {error && (
-                <p className="text-red-500 mt-4">{error}</p>
-              )}
+              {error && <p className="text-red-500 mt-4">{error}</p>}
             </div>
-            
-   
-         <div className="flex flex-col py-10 ">
+
+            <div className="flex flex-col py-10 ">
               <div className="w-96 h-14 px-20 py-4 rounded border border-black border-opacity-40 flex-col justify-start items-start gap-2.5 inline-flex transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
                 <div className="justify-start items-start gap-4 inline-fle">
                   <div className="w-6 relative" />
-                  <button className="text-black text-base font-normal leading-normal flex flex-row gap-4 px-4"
-                  type="button"
-                  onClick={handleGoogleSignin}
+                  <button
+                    className="text-black text-base font-normal leading-normal flex flex-row gap-4 px-4"
+                    type="button"
+                    onClick={handleGoogleSignin}
                   >
-
                     <img src="icons/Icon-Google.png" />
                     Sign up with Google
                   </button>

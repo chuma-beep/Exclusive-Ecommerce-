@@ -17,7 +17,7 @@ export function AuthContextProvider({ children }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
- 
+
   // SIGNUP FUNCTION
   const handleSignup = async (event) => {
     event.preventDefault();
@@ -38,6 +38,7 @@ export function AuthContextProvider({ children }) {
       setError(error.message);
     } else {
       console.log("User signed up: ", firstName);
+      alert("Please check your email for verification")
     }
     setLoading(false);
   };
@@ -70,9 +71,9 @@ export function AuthContextProvider({ children }) {
 
     if (error) {
       setError(error.message);
-    } else{
-      console.log("Login Successful")
-      navigate("/my-account")
+    } else {
+      console.log("Login Successful");
+      navigate("/my-account");
     }
     setLoading(false);
   };
@@ -82,61 +83,58 @@ export function AuthContextProvider({ children }) {
     try {
       setLoading(true);
       setError("");
-  
+
       const { error } = await supabase.auth.signOut();
       if (error) {
         throw new Error(error.message);
       }
-  
+
       setSession(null);
       navigate("/");
-  
     } catch (error) {
       setError(error.message);
       console.error("Error logging out:", error.message);
-  
     } finally {
       setLoading(false);
     }
   };
-  
-  
-    // UPDATE USER PROFILE
-const updateProfile = async (formData) => {
-  try {
-    setLoading(true);
-    setError("");
 
-    const { data, error } = await supabase
-      .from("users")
-      .update({
-        first_name: formData.firstName,
-        last_name: formData.lastName,
-        email: formData.email,
-        address: formData.address,
-      })
-      .eq("id", session.user.id);
+  // UPDATE USER PROFILE
+  const updateProfile = async (formData) => {
+    try {
+      setLoading(true);
+      setError("");
 
-    if (error) {
-      throw error;
+      const { data, error } = await supabase
+        .from("users")
+        .update({
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          address: formData.address,
+        })
+        .eq("id", session.user.id);
+
+      if (error) {
+        throw error;
+      }
+
+      console.log("Profile updated successfully:", data);
+      alert("Profile updated successfully!");
+
+      // Optionally, update local session data if needed
+      setFirstName(formData.firstName); // Update firstName in context
+    } catch (error) {
+      console.error("Error updating profile:", error.message);
+      alert("Failed to update profile. Please try again later.");
+    } finally {
+      setLoading(false);
     }
-
-    console.log("Profile updated successfully:", data);
-    alert("Profile updated successfully!");
-
-    // Optionally, update local session data if needed
-    setFirstName(formData.firstName); // Update firstName in context
-
-  } catch (error) {
-    console.error("Error updating profile:", error.message);
-    alert("Failed to update profile. Please try again later.");
-  } finally {
-    setLoading(false);
-  }
-}
+  };
 
   // CHECK IF USER IS LOGGED IN
   const isLoggedIn = Boolean(session);
+  
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
@@ -144,24 +142,26 @@ const updateProfile = async (formData) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{
-      session,
-      setSession,
-      email,
-      setEmail,
-      password,
-      setPassword,
-      firstName,
-      setFirstName,
-      handleSignup,
-      handleLogin,
-      handleLogout,
-      isLoggedIn,
-      handleGoogleSignin,
-      error,
-      loading,
-      updateProfile,
-    }}>
+    <AuthContext.Provider
+      value={{
+        session,
+        setSession,
+        email,
+        setEmail,
+        password,
+        setPassword,
+        firstName,
+        setFirstName,
+        handleSignup,
+        handleLogin,
+        handleLogout,
+        isLoggedIn,
+        handleGoogleSignin,
+        error,
+        loading,
+        updateProfile,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -170,8 +170,7 @@ const updateProfile = async (formData) => {
 export function useAuthContext() {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuthContext must be used within AuthContextProvider');
+    throw new Error("useAuthContext must be used within AuthContextProvider");
   }
   return context;
 }
-  

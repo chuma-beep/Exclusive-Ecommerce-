@@ -3,7 +3,7 @@ import { RiCustomerServiceLine, RiShieldCheckLine } from "react-icons/ri";
 
 export default function OurServices() {
     return (
-        <section className="w-full px-28 my-20">
+        <section className="w-full px-[5%] my-20">
             <div className="flex w-full items-center justify-center gap-[3rem] flex-wrap">
             <div className="flex flex-col items-center justify-center gap-4 w-max">
                 <div className="w-20 h-20 rounded-full flex items-center justify-center bg-secondary"><TbTruckDelivery className="w-3/4 h-3/4 bg-black rounded-full text-primary p-2" /></div>

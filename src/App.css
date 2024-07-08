@@ -1,14 +1,13 @@
-#emailOrNumber{
-    width: inherit;
+#emailOrNumber,
+#firstName {
+  width: inherit;
 }
 
-
-
-#passWordBox{
-    outline: none;
-border: none;
+#passWordBox {
+  outline: none;
+  border: none;
   background-color: transparent;
-  border-bottom: 2px solid black; 
- border-radius: none;
- width: inherit;
+  border-bottom: 2px solid black;
+  border-radius: none;
+  width: inherit;
 }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="flex flex-col flex-wrap justify-between items-center w-full  bg-black text-white py-14">
-      <div className="flex flex-wrap justify-between gap-6 w-full mb-6 px-28">
+      <div className="flex flex-wrap justify-between gap-6 w-full mb-6 px-[7%]">
         <div className="flex flex-col gap-2">
           <h2 className="text-[1.3rem] mb-3">Exclusive</h2>
           <h3 className="text-md">Subscribe</h3>
@@ -54,7 +54,7 @@ export default function Footer() {
             </div>
         </div>
       </div>
-      <p className="py-4 border-t-[0.8px] leading-10 border-secondary w-full text-center">&copy; Copyright {new Date().getFullYear()} - AltSchool-V3 Circle 70. All right reserved.</p>
+      <p className="py-4 px-[7%] border-t-[0.8px] leading-10 border-secondary w-full text-center">&copy; Copyright {new Date().getFullYear()} - AltSchool-V3 Circle 70. All right reserved.</p>
     </footer>
   );
 }

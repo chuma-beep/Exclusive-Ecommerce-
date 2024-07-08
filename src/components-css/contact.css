@@ -6,10 +6,13 @@ body, html{
     justify-content: center;
 }
 .contact-container{
-    max-width: 900px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-left: 5rem;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding-inline: 7%;
+    gap: 2rem;
+    margin-top: 2rem;
    
 }
 
@@ -19,7 +22,7 @@ hr{
 }
 
 .call-write{
-    margin: 2rem;
+    /* margin: 2rem; */
     max-width: 400px;
     height: 400px;
     border: 1px solid #DB4444;
@@ -32,22 +35,14 @@ hr{
     margin: .5rem;
 }
 
-.phone-icon{
+.phone-icon,
+.mail-icon {
     width: 30px;
     height: 30px;
     background-color: #DB4444;
     border-radius: 50%;
    
 }
-
-.mail-icon{
-    width: 30px;
-    height: 30px;
-    background-color: #DB4444;
-    border-radius: 50%;
-   
-}
-
 
 .call,
 .write{
@@ -65,11 +60,7 @@ hr{
     width: 800px;
     height: 400px;
     border: 1px solid #DB4444;
-   
-    
-    margin: 2rem;
-    
-
+    /* margin: 2rem;    */
 }
 
 .my-form{
@@ -109,7 +100,6 @@ textarea{
 
 @media screen and (min-width:250px) and (max-width:480px){
     .contact-container{
-         display: flex;
          flex-direction: column;
          margin-left: .3rem;
         
@@ -130,12 +120,11 @@ textarea{
    
      
 }
-@media screen and (min-width:481px) and (max-width:768px){
+@media screen and (min-width:481px) and (max-width:840px){
  
 .contact-container{
- display: flex;
  flex-direction: row;
- margin-left: .3rem;
+ /* margin-left: .3rem; */
 }
 
 .contact-form,
