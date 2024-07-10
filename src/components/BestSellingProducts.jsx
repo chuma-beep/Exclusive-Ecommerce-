@@ -49,7 +49,7 @@ export default function BestSellingProducts() {
         <div className="flex items-center gap-4">
           <Link
             className="px-4 py-2 rounded-md bg-action w-max text-primary hover:translate-x-2 hover:-translate-y-1 transition-all"
-            to="/"
+            to="/all-products"
           >
             View All
           </Link>
@@ -62,8 +62,8 @@ export default function BestSellingProducts() {
             ))
           : bestSellingProducts.map((product) => {
               return (
-                <div className="flex flex-col gap-1 w-[14rem]" key={product.id}>
-                  <div className="group overflow-hidden flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative ">
+                <div className="flex flex-col gap-1 w-[14rem] max-sm:w-[9rem]" key={product.id}>
+                  <div className="group overflow-hidden flex flex-col items-center justify-center w-full h-[13rem] max-sm:h-[10rem] rounded-md p-4 bg-secondary relative ">
                     <img
                       className="hover:scale-[1.2] transition-all"
                       src={product.img}

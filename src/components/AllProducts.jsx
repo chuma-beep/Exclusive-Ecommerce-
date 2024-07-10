@@ -51,8 +51,8 @@ export default function AllProducts() {
                 <ItemSkeleton2 key={index} />
               ))
             : products.map((product) => (
-                <div key={product.id} className="flex flex-col gap-1 w-[14rem]">
-                  <div className="group overflow-hidden flex flex-col items-center justify-center w-full h-[13rem] rounded-md p-4 bg-secondary relative">
+                <div key={product.id} className="flex flex-col gap-1 w-[14rem] max-sm:w-[9rem]">
+                  <div className="group overflow-hidden flex flex-col items-center justify-center w-full h-[13rem] max-sm:h-[10rem] rounded-md p-4 bg-secondary relative">
                     <img
                       className="hover:scale-[1.2] transition-all"
                       src={product.img}
@@ -79,14 +79,14 @@ export default function AllProducts() {
                       </Link>
                     </div>
                     <button
-                      className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block"
+                      className="w-full h-[2rem] absolute bottom-0 bg-black text-primary hidden group-hover:block max-sm:block"
                       onClick={() => addToCart(product)}
                     >
                       Add To Cart
                     </button>
                   </div>
                   <h3 className="text-md font-medium">{product.name}</h3>
-                  <div className="flex gap-2 items-center">
+                  <div className="flex gap-2 items-center max-sm:items-start max-sm:flex-col">
                     <span className="text-action">{`$${product.price}`}</span>
                     <div>
                       <StarRatings

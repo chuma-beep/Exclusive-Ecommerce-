@@ -35,7 +35,7 @@ export default function SignUp() {
     <>
       <Header />
       <div className="flex flex-row mt-20 mb-20 gap-20 justify-center">
-        <div className="flex max-h-max">
+        <div className="hidden sm:block  max-h-max">
           <img
             className="hidden sm:block h-full"
             src="signup-img/singup-img(2).png"
@@ -89,7 +89,7 @@ export default function SignUp() {
                 </span>
               </div>
             </div>
-            <div className="w-96 h-14 px-32 py-4 mt-10 bg-red-500 rounded justify-center items-center gap-2.5 inline-flex transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
+            <div className="w-96 max-sm:w-full h-14 px-32 max-sm:p-0 py-4 mt-10 bg-red-500 rounded justify-center items-center gap-2.5 inline-flex transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
               <button
                 className="text-neutral-50"
                 type="submit"
@@ -101,7 +101,7 @@ export default function SignUp() {
             </div>
 
             <div className="flex flex-col py-10 ">
-              <div className="w-96 h-14 px-20 py-4 rounded border border-black border-opacity-40 flex-col justify-start items-start gap-2.5 inline-flex transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
+              <div className="w-96 max-sm:w-full h-14 px-20 py-4 max-sm:p-0 max-sm:items-center max-sm:justify-center rounded border border-black border-opacity-40 flex-col justify-start items-start gap-2.5 inline-flex transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
                 <div className="justify-start items-start gap-4 inline-fle">
                   <div className="w-6 relative" />
                   <button
