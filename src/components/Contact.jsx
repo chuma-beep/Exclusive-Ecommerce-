@@ -1,7 +1,7 @@
 import React from "react";
 // import AboutHeader from "./AboutHeader.jsx";
 import Header from "./Header";
-import "../components-css/contact.css";
+
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { Container } from "@mui/material";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -14,104 +14,105 @@ function Contact() {
 
   return (
     <>
-      {/* <AboutHeader /> */}
-      <Header />
+    <Header />
 
-      <Container style={{ margin: "1rem 0", width: "max-content", paddingInline: '7%' }}>
-        <RouterNavLink
-          to="/"
-          style={{
-            color: "gray",
-            textDecoration: "none",
-            marginRight: "0.5rem",
-          }}
-        >
-          Home
-        </RouterNavLink>
-        <span>
-          <b> / </b>
-        </span>
-        <RouterNavLink
-          to="product-details"
-          style={{
-            color: "gray",
-            textDecoration: "none",
-            marginRight: "0.5rem",
-          }}
-        >
-          Product Details
-        </RouterNavLink>
-        <span>
-          <b> / </b>
-        </span>
-        <RouterNavLink
-          to="/contact"
-          style={{ color: "black", textDecoration: "none" }}
-        >
-          Contact
-        </RouterNavLink>
-        <span>
-          <b> / </b>
-        </span>
-      </Container>
-      <div className="contact-container">
-        <div className="call-write">
+    <Container className="my-4 px-8">
+      <RouterNavLink to="/" className="text-gray-500 no-underline mr-2">
+        Home
+      </RouterNavLink>
+      <span><b> / </b></span>
+      <RouterNavLink
+        to="/product-details"
+        className="text-gray-500 no-underline mx-2"
+      >
+        Product Details
+      </RouterNavLink>
+      <span><b> / </b></span>
+      <RouterNavLink to="/contact" className="text-black no-underline">
+        Contact
+      </RouterNavLink>
+    </Container>
+
+    <div className="flex flex-col items-center justify-center min-h-screen mt-2">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 p-6  rounded-lg shadow-lg border border-gray-300">
+        <div className="flex flex-col max-w-full md:w-1/2 p-4 rounded-lg shadow-lg bg-white">
           <div className="call">
-            <div className="icon-heading">
-              <div className="phone-icon">
-                <FaPhoneAlt
-                  style={{ margin: ".4rem", color: "white" }}
-                ></FaPhoneAlt>
+            <div className="flex items-center mb-2">
+              <div className="bg-red-600 p-2 rounded-full">
+                <FaPhoneAlt className="text-white" />
               </div>
-              <h3 className="call">Call To Us</h3>
+              <h3 className="text-lg font-semibold ml-2">Call To Us</h3>
             </div>
-            <p className="time">We are available 24/7, 7days a week.</p>
-            <p className="time">Phone: +8801611112222</p>
+            <p className="text-black font-bold mb-2">We are available 24/7, 7 days a week.</p>
+            <p className="text-black font-bold">Phone: +8801611112222</p>
           </div>
-          <hr></hr>
+          <hr className="my-4 border-gray-300" />
           <div className="write">
-            <div className="mail">
-              <div className="icon-heading">
-                <div className="mail-icon">
-                  <CiMail style={{ margin: ".4rem", color: "white" }}></CiMail>
-                </div>
-                <h3 className="write">Write To Us</h3>
+            <div className="flex items-center mb-2">
+              <div className="bg-red-600 p-2 rounded-full">
+                <CiMail className="text-white" />
               </div>
+              <h3 className="text-lg font-semibold ml-2 mb-2">Write To Us</h3>
             </div>
-            <p className="address">
+            <p className="text-black font-bold mb-2">
               Fill out our form and we will contact you within 24 hours.
             </p>
-            <p className="address">Emails: customer@exclusive.com</p>
-            <p className="address">Emails: support@exclusive.com</p>
+            <p className="text-black font-bold">Email: customer@exclusive.com</p>
+            <p className="text-black font-bold">Email: support@exclusive.com</p>
           </div>
         </div>
-        <div className="contact-form">
-          <form className="my-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              className="name"
-              placeholder="Your name"
-              required
-            />
-            <input
-              type="email"
-              className="email"
-              placeholder="Your email"
-              required
-            />
-            <input
-              type="tel"
-              className="phone-number"
-              placeholder="Your Phone"
-            />
-            <textarea className="message" placeholder="Your message" required />
-            <button type="submit" className="send">
-              Send Message
+
+        <div className="w-full md:w-1/2 max-w-md">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white p-4 rounded-lg border border-gray-300 shadow-lg space-y-4"
+          >
+            <div>
+              <label className="text-base font-medium">Your Name</label>
+              <input
+                type="text"
+                className="w-full h-12 border border-gray-300 rounded-md p-3 mt-1"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+            <div>
+              <label className="text-base font-medium">Your Email</label>
+              <input
+                type="email"
+                className="w-full h-12 border border-gray-300 rounded-md p-3 mt-1"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div>
+              <label className="text-base font-medium">Your Phone Number</label>
+              <input
+                type="tel"
+                className="w-full h-12 border border-gray-300 rounded-md p-3 mt-1"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+            <div>
+              <label className="text-base font-medium">Your Message</label>
+              <textarea
+                className="w-full h-32 border border-gray-300 rounded-md p-3 mt-1"
+                placeholder="Enter your message"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-52 h-14 bg-red-600 text-white rounded-md mt-4"
+            >
+              Submit
             </button>
           </form>
         </div>
       </div>
-    </>
+    </div>
+  </>
   );
 }
 
