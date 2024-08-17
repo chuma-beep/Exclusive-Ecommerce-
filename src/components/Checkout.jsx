@@ -3,7 +3,7 @@ import { payment } from "../data/payment.json";
 import  { useState, useContext } from "react";
 import { Container, Typography } from "@mui/material";
 import { NavLink as RouterNavLink } from "react-router-dom";
-import "../components-css/account-checkout.css";
+
 import Footer from "./Footer";
 import Header from './Header';
 
@@ -45,212 +45,259 @@ function Checkout() {
 
   return (
     <>
-      <Header />
-
-      <Container style={{ marginTop: "20px" }} className="upper-links">
-        <RouterNavLink
-          to="/account"
-          style={{ color: "gray", textDecoration: "none", marginRight: "0.5rem" }}
-        >
+    <Header />
+  
+    <Container className="mt-5">
+      <div>
+        <RouterNavLink to="/" className="text-gray-500 no-underline mr-2">
+          Home
+        </RouterNavLink>
+        <span>
+          <b> / </b>
+        </span>
+        <RouterNavLink to="/my-account" className="text-gray-500 no-underline">
           Account
         </RouterNavLink>
-        <span>/</span>
-        <RouterNavLink
-          to="/my-account"
-          style={{ color: "gray", textDecoration: "none", marginRight: "0.5rem" }}
-        >
-          My Account
-        </RouterNavLink>
-        <span>/</span>
-        <RouterNavLink
-          to="/product"
-          style={{ color: "gray", textDecoration: "none", marginRight: "0.5rem" }}
-        >
+        <span>
+          <b> / </b>
+        </span>
+        <RouterNavLink to="/my-account" className="text-gray-500 no-underline">
           Product
         </RouterNavLink>
-        <span>/</span>
-        <RouterNavLink
-          to="/cart"
-          style={{ color: "gray", textDecoration: "none", marginRight: "0.5rem" }}
-        >
+        <span>
+          <b> / </b>
+        </span>
+        <RouterNavLink to="/" className="text-gray-500 no-underline mr-2">
           View Cart
         </RouterNavLink>
-        <span>/</span>
-        <RouterNavLink
-          to="/checkout"
-          style={{ color: "black", textDecoration: "none", marginRight: "0.5rem" }}
-        >
+        <span>
+          <b> / </b>
+        </span>
+        <RouterNavLink to="/my-account" className="text-black no-underline">
           Checkout
         </RouterNavLink>
-      </Container>
-
-      <Container className="checkout-container" style={{ display: "flex", gap: "2px" }}>
-        <div className="billing" style={{ width: "470px", height: "814px", marginTop: "50px", marginLeft: "5px" }}>
-          <Typography variant="h1" sx={{ fontSize: "32px", mb: "1rem", fontWeight: "bold" }}>
-            Billing Details
-          </Typography>
-
-          <form onSubmit={handleSubmit}>
-            <div className="form-rows">
-              <div className="form-groups">
-                <label htmlFor="firstName">First Name</label><span style={{ color: "red" }}>*</span><br />
+      </div>
+    </Container>
+  
+    <Container className="flex flex-wrap gap-2">
+      <div className="flex flex-col lg:flex-row gap-8 mt-8 lg:mt-16 w-full">
+        <div className="w-full lg:w-1/2 mt-12 p-4">
+          <h1 className="text-2xl mb-4 font-bold">Billing Details</h1>
+  
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="form-row grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6 mt-4">
+              <div>
+                <label htmlFor="firstName">
+                  First Name <span className="text-red-500">*</span>
+                </label>
+                <br />
                 <input
                   type="text"
-                  id="firstName"
-                  className="my-input"
+                  id="firstname"
+                  className="w-full p-2 border border-gray-300 rounded bg-gray-100"
                   name="firstName"
                   value={formData.firstName}
                   required
                   onChange={handleInputChange}
                 />
               </div>
-
-              <div className="form-groups">
-                <label htmlFor="company">Company Name</label><br />
+  
+              <div>
+                <label htmlFor="company">Company Name</label>
+                <br />
                 <input
                   type="text"
                   id="company"
-                  className="my-input"
+                  className="w-full p-2 border border-gray-300 rounded bg-gray-100"
                   name="company"
                   value={formData.company}
                   onChange={handleInputChange}
                 />
               </div>
-
-              <div className="form-groups">
-                <label htmlFor="street">Street Address</label><span style={{ color: "red" }}>*</span><br />
+  
+              <div>
+                <label htmlFor="street">
+                  Street Address <span className="text-red-500">*</span>
+                </label>
+                <br />
                 <input
                   type="text"
                   id="street"
-                  className="my-input"
+                  className="w-full p-2 border border-gray-300 rounded bg-gray-100"
                   name="street"
                   value={formData.street}
                   required
                   onChange={handleInputChange}
                 />
               </div>
-
-              <div className="form-groups">
-                <label htmlFor="apartment">Apartment, floor, etc (optional)</label><br />
+  
+              <div>
+                <label htmlFor="apartment">
+                  Apartment, floor, etc (optional)
+                </label>
+                <br />
                 <input
                   type="text"
                   id="apartment"
-                  className="my-input"
+                  className="w-full p-2 border border-gray-300 rounded bg-gray-100"
                   name="apartment"
                   value={formData.apartment}
                   onChange={handleInputChange}
                 />
               </div>
-
-              <div className="form-groups">
-                <label htmlFor="town">Town/city</label><span style={{ color: "red" }}>*</span><br />
+  
+              <div>
+                <label htmlFor="town">
+                  Town/city <span className="text-red-500">*</span>
+                </label>
+                <br />
                 <input
                   type="text"
                   id="town"
                   name="town"
-                  className="my-input"
+                  className="w-full p-2 border border-gray-300 rounded bg-gray-100"
                   value={formData.town}
                   required
                   onChange={handleInputChange}
                 />
               </div>
-
-              <div className="form-groups">
-                <label htmlFor="number">Phone Number</label><span style={{ color: "red" }}>*</span><br />
+  
+              <div>
+                <label htmlFor="number">
+                  Phone Number <span className="text-red-500">*</span>
+                </label>
+                <br />
                 <input
                   type="text"
                   id="number"
                   name="number"
-                  className="my-number-input"
+                  className="w-full p-2 border border-gray-300 rounded bg-gray-100"
                   value={formData.number}
                   required
                   onChange={handleInputChange}
                 />
               </div>
-
-              <div className="form-groups">
-                <label htmlFor="email">Email Address</label><span style={{ color: "red" }}>*</span><br />
+  
+              <div>
+                <label htmlFor="email">
+                  Email Address <span className="text-red-500">*</span>
+                </label>
+                <br />
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  className="my-email-input"
+                  className="w-full p-2 border border-gray-300 rounded bg-gray-100"
                   value={formData.email}
                   required
                   onChange={handleInputChange}
                 />
               </div>
             </div>
-
-            <div>
-              <label htmlFor="checkbox"> </label>
+  
+            <div className="flex items-center">
               <input
                 type="checkbox"
                 id="checkbox"
                 name="checkbox"
                 checked={isChecked}
                 onChange={handleCheckboxChange}
-                className="checkbox-container"
+                className="mr-2"
               />
-              <span>
-                <p className="save">Save this information for faster check-out next time</p>
-              </span>
+              <label htmlFor="checkbox" className="text-sm">
+                Save this information for faster check-out next time
+              </label>
             </div>
           </form>
         </div>
-        <div className="checkout-container flex flex-col">
-      <div className="checkout-details" style={{width: "100%", marginTop: "6rem" }}>
-        {cartItems.map((item) => (
-          <div key={item.id} className="checkout-item">
-           
-            <span>{item.name}</span>
-            <span>${item.price}</span>
+  
+        <div className="w-full lg:w-1/2 flex flex-col p-4 mt-10">
+          <div className="mb-4">
+            {cartItems.map((item) => (
+              <div
+                key={item.id}
+                className="flex justify-between py-2 border-b border-gray-300"
+              >
+                <span>{item.name}</span>
+                <span>${item.price}</span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="checkout-summary" style={{width: '100%', marginTop: '2rem'}}>
-        <div className="checkout-subtotal">
-          <span>Subtotal:</span>
-          <span>${getCartTotal()}</span>
+          <div className="mb-4">
+            <div className="flex justify-between py-2">
+              <span>Subtotal:</span>
+              <span>${getCartTotal()}</span>
+            </div>
+            <hr />
+            <div className="flex justify-between py-2">
+              <span>Shipping:</span>
+              <span>Free</span>
+            </div>
+            <hr />
+            <div className="flex justify-between py-2">
+              <span>Total:</span>
+              <span>${getCartTotal()}</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 mb-4">
+            <input
+              type="radio"
+              name="payment-method"
+              id="bank"
+              checked={paymentMethod === "bank"}
+              onChange={handlePaymentMethodChange}
+            />
+            <label htmlFor="bank" className="font-bold text-lg">
+              Bank
+            </label>
+            <div className="flex gap-2">
+              {payment.map((product) => (
+                <div key={product.id}>
+                  <img
+                    src={product.img}
+                    alt={product.alt}
+                    className="w-8 h-8"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+  
+          <div className="flex items-center gap-2 mb-4">
+            <input
+              type="radio"
+              name="payment-method"
+              id="paypal"
+              checked={paymentMethod === "paypal"}
+              onChange={handlePaymentMethodChange}
+            />
+            <label htmlFor="paypal" className="font-bold text-lg">
+              Cash on Delivery
+            </label>
+          </div>
+  
+          <div className="flex gap-2 mb-4">
+            <input
+              type="text"
+              placeholder="Coupon Code"
+              className="flex-grow p-2 border border-gray-300 rounded"
+            />
+            <button className="px-4 py-2 bg-red-500 text-white rounded">
+              Apply Coupon
+            </button>
+          </div>
+          <button
+            className="px-4 py-2 bg-red-500 text-white rounded w-full"
+            onClick={clearCart}
+          >
+            Place Order
+          </button>
         </div>
-        <hr></hr>
-        <div className="checkout-shipping">
-          <span>Shipping:</span>
-          <span>Free</span>
-        </div>
-        <hr style={{width: '100%', marginTop: '0.5rem'}}></hr>
-        <div className="checkout-total">
-          <span>Total:</span>
-          <span>${getCartTotal()}</span>
-        </div>
       </div>
-      <div className="payment-method-item" style={{ display: 'flex', gap: '0.6rem', width: '427px', height: '28px' }}>
-  <input type="radio" name="payment-method" id="bank" checked={paymentMethod === "bank"} onChange={handlePaymentMethodChange} />
-  <label htmlFor="bank" style={{ color: "black", fontWeight: "bold", fontSize: "16px" }}>Bank</label>
-  <div className="payment-images" style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between' }}>
-    {payment.map((product) => (
-      <div key={product.id}>
-        <img src={product.img} alt={product.alt} />
-      </div>
-    ))}
-  </div>
-</div>
-
-<div className="payment-method-item2" style={{ display: 'flex', gap: '1.5rem', marginTop: '20px' }}>
-  <input type="radio" name="payment-method" id="paypal" checked={paymentMethod === "paypal"} onChange={handlePaymentMethodChange} />
-  <label htmlFor="paypal" style={{ color: "black", fontWeight: "bold", fontSize: "16px" }}>Cash on Delivery</label>
-</div>
-
-      <div className="checkout-coupon" style={{width: '100%', marginTop: '2rem'}}>
-        <input type="text" placeholder="Coupon Code" />
-        <button>Apply Coupon</button>
-      </div>
-      <button className="checkout-button" onClick={clearCart} >Place Order</button>
-    </div>
-    
-      </Container>
-      <Footer />
-    </>
+    </Container>
+    <Footer />
+  </>
+  
   );
 }
 

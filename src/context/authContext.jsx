@@ -24,6 +24,16 @@ export function AuthContextProvider({ children }) {
     setLoading(true);
     setError("");
 
+
+     // Password strength requirements
+     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  
+     if (!passwordRegex.test(password)) {
+       setError('Password must contain at least one lowercase letter, one uppercase letter, one number, and be at least 8 characters long.');
+       setLoading(false);
+       return;
+     }
+     
     const { user, error } = await supabase.auth.signUp({
       email,
       password,
